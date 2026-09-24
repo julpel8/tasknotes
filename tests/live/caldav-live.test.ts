@@ -85,3 +85,27 @@ describeLive("CalDAV live server", () => {
 		expect(await client.getObject(objectUrl)).toBeNull();
 	});
 });
+
+describeLive("CalDAV live server to-dos", () => {
+	const client = new CalDAVClient(
+		() => ({ serverUrl: url!, username: process.env.CALDAV_LIVE_USER!, password: process.env.CALDAV_LIVE_PASS! }),
+		curlRequest
+	);
+
+	it("round-trips a to-do and keeps LAST-MODIFIED", async () => {
+		const { writeTodo, readTodo } = await import("../../src/services/caldav/caldavTaskMapping");
+		const calendars = await client.discoverCalendars();
+		const target = calendars.find((c) => c.displayName === process.env.CALDAV_LIVE_CALENDAR)!;
+		const uid = `live-todo-${Date.now()}`;
+		const objectUrl = objectUrlForUid(target.url, uid);
+		await client.putObject(
+			objectUrl,
+			writeTodo(null, uid, { title: "Essai rappel", completed: false, date: "2026-09-25T09:15", dateField: "due", priority: 1 }),
+			{ createOnly: true }
+		);
+		const todos = await client.fetchObjects(target.url, "VTODO");
+		const mine = todos.find((o) => o.url === objectUrl)!;
+		expect(readTodo(mine.data)).toMatchObject({ title: "Essai rappel", date: "2026-09-25T09:15", priority: 1 });
+		await client.deleteObject(objectUrl);
+	});
+});

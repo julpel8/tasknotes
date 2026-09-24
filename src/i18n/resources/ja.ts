@@ -1872,6 +1872,15 @@ export const ja: TranslationTree = {
 					failure: "CalDAV 接続に失敗しました: {error}",
 				},
 				calendarToggle: { description: "このカレンダーの予定をカレンダービューに表示します。" },
+				syncTasks: {
+					name: "タスクをリマインダーに送信",
+					description: "各タスクを CalDAV カレンダーの ToDo として保持し、スマートフォンのリマインダーアプリに表示します。そこで完了にしたり日付を変えたりするとノートが更新されます。",
+				},
+				taskCalendar: {
+					name: "タスク用カレンダー",
+					description: "タスクを受け取る CalDAV カレンダー。",
+					none: "カレンダーを選択",
+				},
 				refreshMinutes: { name: "更新間隔（分）", description: "TaskNotes がサーバーから変更を取得する頻度。" },
 			},
 			googleCalendarExport: {

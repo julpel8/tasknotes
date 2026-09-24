@@ -516,6 +516,11 @@ export function initializeServicesLazily(plugin: TaskNotesPlugin): void {
 						plugin.notifyDataChanged(undefined, false, true);
 					});
 					await plugin.caldavCalendarService.initialize();
+
+					plugin.caldavTaskSyncService = new (
+						await import("../services/caldav/CalDAVTaskSyncService")
+					).CalDAVTaskSyncService(plugin, plugin.caldavCalendarService);
+					plugin.caldavTaskSyncService.start();
 				}
 
 				plugin.taskFileLifecycleReconciliationService =

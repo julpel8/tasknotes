@@ -1872,6 +1872,15 @@ export const zh: TranslationTree = {
 					failure: "CalDAV 连接失败：{error}",
 				},
 				calendarToggle: { description: "在日历视图中显示此日历的日程。" },
+				syncTasks: {
+					name: "将任务发送到提醒事项",
+					description: "把每个任务作为 CalDAV 日历中的待办事项保存，手机的提醒事项应用会显示它。在那里勾选或修改日期会更新笔记。",
+				},
+				taskCalendar: {
+					name: "任务日历",
+					description: "接收任务的 CalDAV 日历。",
+					none: "选择日历",
+				},
 				refreshMinutes: { name: "刷新间隔（分钟）", description: "TaskNotes 从服务器获取更改的频率。" },
 			},
 			googleCalendarExport: {

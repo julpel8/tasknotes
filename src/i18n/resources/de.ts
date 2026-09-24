@@ -1872,6 +1872,15 @@ export const de: TranslationTree = {
 					failure: "CalDAV-Verbindung fehlgeschlagen: {error}",
 				},
 				calendarToggle: { description: "Termine dieses Kalenders in Kalenderansichten anzeigen." },
+				syncTasks: {
+					name: "Aufgaben an Erinnerungen senden",
+					description: "Jede Aufgabe als CalDAV-Aufgabe in einem Kalender führen, den Erinnerungs-Apps auf dem Telefon anzeigen. Abhaken oder Datum ändern dort aktualisiert die Notiz.",
+				},
+				taskCalendar: {
+					name: "Aufgabenkalender",
+					description: "CalDAV-Kalender, der die Aufgaben erhält.",
+					none: "Kalender wählen",
+				},
 				refreshMinutes: { name: "Aktualisierungsintervall (Minuten)", description: "Wie oft TaskNotes Änderungen vom Server abruft." },
 			},
 			googleCalendarExport: {

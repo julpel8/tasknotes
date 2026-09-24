@@ -39,7 +39,7 @@ function cloneVTimezoneWithTzid(vtimezone: ICAL.Component, tzid: string): ICAL.C
 	return aliasVTimezone;
 }
 
-function registerCalendarVTimezones(calendar: ICAL.Component): void {
+export function registerCalendarVTimezones(calendar: ICAL.Component): void {
 	const vtimezones = calendar.getAllSubcomponents("vtimezone");
 
 	vtimezones.forEach((vtimezone) => {

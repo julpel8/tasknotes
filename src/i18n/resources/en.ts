@@ -2011,6 +2011,15 @@ export const en: TranslationTree = {
 				calendarToggle: {
 					description: "Show this calendar's events in calendar views.",
 				},
+				syncTasks: {
+					name: "Send tasks to reminders",
+					description: "Keep every task as a to-do in a CalDAV calendar, where phone reminder apps show it. Checking it off or changing its date there updates the note.",
+				},
+				taskCalendar: {
+					name: "Task calendar",
+					description: "CalDAV calendar that receives the tasks.",
+					none: "Choose a calendar",
+				},
 				refreshMinutes: {
 					name: "Refresh interval (minutes)",
 					description: "How often TaskNotes fetches changes from the server.",

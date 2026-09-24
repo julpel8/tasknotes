@@ -1856,6 +1856,15 @@ export const ko: TranslationTree = {
 					failure: "CalDAV 연결 실패: {error}",
 				},
 				calendarToggle: { description: "이 캘린더의 일정을 캘린더 보기에 표시합니다." },
+				syncTasks: {
+					name: "작업을 미리 알림으로 보내기",
+					description: "각 작업을 CalDAV 캘린더의 할 일로 유지하여 휴대폰 미리 알림 앱에 표시합니다. 그곳에서 완료하거나 날짜를 바꾸면 노트가 업데이트됩니다.",
+				},
+				taskCalendar: {
+					name: "작업 캘린더",
+					description: "작업을 받을 CalDAV 캘린더입니다.",
+					none: "캘린더 선택",
+				},
 				refreshMinutes: { name: "새로 고침 간격(분)", description: "TaskNotes가 서버에서 변경 사항을 가져오는 빈도입니다." },
 			},
 			googleCalendarExport: {

@@ -1872,6 +1872,15 @@ export const ru: TranslationTree = {
 					failure: "Ошибка подключения CalDAV: {error}",
 				},
 				calendarToggle: { description: "Показывать события этого календаря в представлениях календаря." },
+				syncTasks: {
+					name: "Отправлять задачи в напоминания",
+					description: "Хранить каждую задачу как задачу CalDAV в календаре, который показывают приложения напоминаний на телефоне. Отметка или смена даты там обновляет заметку.",
+				},
+				taskCalendar: {
+					name: "Календарь задач",
+					description: "Календарь CalDAV, в который отправляются задачи.",
+					none: "Выберите календарь",
+				},
 				refreshMinutes: { name: "Интервал обновления (минуты)", description: "Как часто TaskNotes получает изменения с сервера." },
 			},
 			googleCalendarExport: {

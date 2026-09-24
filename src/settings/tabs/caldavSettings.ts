@@ -4,6 +4,7 @@ import type { TranslationKey } from "../../i18n";
 import { CALDAV_PASSWORD_SECRET_ID } from "../../services/caldav/CalDAVCalendarService";
 import {
 	createSettingGroup,
+	configureDropdownSetting,
 	configureTextSetting,
 	configureToggleSetting,
 	configureNumberSetting,
@@ -140,6 +141,48 @@ export function renderCalDAVSettings(
 							save();
 							await service.refresh();
 							plugin.notifyDataChanged(undefined, false, true);
+						},
+					})
+				);
+			}
+
+			const taskCalendars = settings.calendars.filter((calendar) =>
+				calendar.components.includes("VTODO")
+			);
+			group.addSetting((setting) =>
+				void configureToggleSetting(setting, {
+					name: translate("settings.integrations.caldav.syncTasks.name"),
+					desc: translate("settings.integrations.caldav.syncTasks.description"),
+					getValue: () => settings.syncTasks,
+					setValue: (value: boolean) => {
+						settings.syncTasks = value;
+						save();
+						if (value) void plugin.caldavTaskSyncService?.runPass(true);
+						rerender();
+					},
+				})
+			);
+
+			if (settings.syncTasks) {
+				group.addSetting((setting) =>
+					void configureDropdownSetting(setting, {
+						name: translate("settings.integrations.caldav.taskCalendar.name"),
+						desc: translate("settings.integrations.caldav.taskCalendar.description"),
+						options: [
+							{
+								value: "",
+								label: translate("settings.integrations.caldav.taskCalendar.none"),
+							},
+							...taskCalendars.map((calendar) => ({
+								value: calendar.url,
+								label: calendar.name,
+							})),
+						],
+						getValue: () => settings.taskCalendarUrl,
+						setValue: (value: string) => {
+							settings.taskCalendarUrl = value;
+							save();
+							if (value) void plugin.caldavTaskSyncService?.runPass(true);
 						},
 					})
 				);

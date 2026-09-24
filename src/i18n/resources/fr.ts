@@ -1872,6 +1872,15 @@ export const fr: TranslationTree = {
 					failure: "Échec de la connexion CalDAV : {error}",
 				},
 				calendarToggle: { description: "Affiche les événements de cet agenda dans les vues calendrier." },
+				syncTasks: {
+					name: "Envoyer les tâches vers les rappels",
+					description: "Garde chaque tâche comme tâche CalDAV dans un agenda, que les apps de rappels du téléphone affichent. La cocher ou changer sa date là-bas met la note à jour.",
+				},
+				taskCalendar: {
+					name: "Agenda des tâches",
+					description: "Agenda CalDAV qui reçoit les tâches.",
+					none: "Choisir un agenda",
+				},
 				refreshMinutes: { name: "Intervalle de mise à jour (minutes)", description: "Fréquence à laquelle TaskNotes récupère les changements du serveur." },
 			},
 			googleCalendarExport: {

@@ -36,4 +36,6 @@ When a change has user-facing documentation, include a canonical tasknotes.dev l
 
 - (#811) Added a CalDAV calendar connection. Calendars from a CalDAV server (Nextcloud, Baïkal, Radicale, iCloud and others) now appear in calendar views, where their events can be created, moved, edited and deleted. The password stays on each device and is never synced.
   - Moving a repeating CalDAV event is not supported yet.
+- (#811) Tasks can be sent to a CalDAV calendar as to-dos, so phone reminder apps show them. Checking a task off or changing its date there updates the note. Archived and deleted tasks leave the list.
+  - A repeating task is sent with its next date only. Checking it off on the phone completes that occurrence.
   - Thanks to @Archetype444 for the request, and to @schobernoise, @slipstyle and @shileiye for their input on it.

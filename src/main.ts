@@ -66,6 +66,7 @@ import { migrateLegacyOAuthData, stripLegacyOAuthData } from "./services/oauthSe
 import { GoogleCalendarService } from "./services/GoogleCalendarService";
 import { MicrosoftCalendarService } from "./services/MicrosoftCalendarService";
 import { CalDAVCalendarService } from "./services/caldav/CalDAVCalendarService";
+import type { CalDAVTaskSyncService } from "./services/caldav/CalDAVTaskSyncService";
 import { CalendarProviderRegistry } from "./services/CalendarProvider";
 import { TaskCalendarSyncService } from "./services/TaskCalendarSyncService";
 import { addTaskToProject, assignTaskAsSubtask } from "./services/taskRelationshipActions";
@@ -214,6 +215,7 @@ export default class TaskNotesPlugin extends Plugin {
 
 	// CalDAV calendar service
 	caldavCalendarService: CalDAVCalendarService;
+	caldavTaskSyncService?: CalDAVTaskSyncService;
 
 	// Calendar provider registry for abstraction
 	calendarProviderRegistry: CalendarProviderRegistry;

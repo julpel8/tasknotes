@@ -1872,6 +1872,15 @@ export const es: TranslationTree = {
 					failure: "Error de conexión CalDAV: {error}",
 				},
 				calendarToggle: { description: "Mostrar los eventos de este calendario en las vistas de calendario." },
+				syncTasks: {
+					name: "Enviar tareas a recordatorios",
+					description: "Mantiene cada tarea como tarea CalDAV en un calendario que muestran las apps de recordatorios del teléfono. Marcarla o cambiar su fecha allí actualiza la nota.",
+				},
+				taskCalendar: {
+					name: "Calendario de tareas",
+					description: "Calendario CalDAV que recibe las tareas.",
+					none: "Elegir un calendario",
+				},
 				refreshMinutes: { name: "Intervalo de actualización (minutos)", description: "Con qué frecuencia TaskNotes obtiene los cambios del servidor." },
 			},
 			googleCalendarExport: {

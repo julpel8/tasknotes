@@ -4624,6 +4624,26 @@
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "6b5fb31f2b0d643b7708bda7b5e906add0b7bd8e"
     },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "6ae793e47e4afed173db6479f840a5a069dabf88"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "b8ac237a2b4b53416afae0a73d6e0cf059cdd1d4"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "25b42d5b5fecf4f19c41722683d546cc79a4b2a2"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "5eb2303a76bf52e167d9960e31ee901f1f072fdf"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "d5c7edcf7757329a934fe904145faa63335fc8d9"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "004dab5f40502b97d18cce7825d080c931a668a9"
@@ -13673,6 +13693,26 @@
     "settings.integrations.caldav.calendarToggle.description": {
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "22a3d4d36442ff95e32cb42784c540304e985830"
+    },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "65a4c1f52bef75d902448f1f7447c5e50afb5c8e"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "adc1622b689ac8dc0b23d648a0f38bb9dc3f293e"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "7a852bb679d69e41e2cb56b23d750baacb06e56b"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "0bc3130ab7770138f4ba416188ca79630259ae71"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "a3ce5e39fd338f01b222f8c766789b68383d8d81"
     },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
@@ -22724,6 +22764,26 @@
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "2b18f2f02850c12da999bae415c608a2516459d8"
     },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "cc0e78d9e3aeb921907d2ae723541c41f5cb52ce"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "c0b733b2188fbe7c3a977300a44e41c55e042764"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "c94e4b849fbcffb25344017dab7b467e794eddba"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "3a8542a13d6de429c278efe8b59ecab2a4539431"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "ecd0a9ce70ebaf3dd7147cd3a9d0983b4630c4ba"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "7cac269c6329345536205a9105f62b5357cbf655"
@@ -31773,6 +31833,26 @@
     "settings.integrations.caldav.calendarToggle.description": {
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "fbef8f01cdfabf186772e01742b9cc6eab257b52"
+    },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "a3e21cdfbbb095e8d3acfb1ba7d9928387bf4aee"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "59d303a41d0144511f129d3fc7af53a3dc9b04be"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "fbe9bdd02cc80fd7713ec297e73f18441ae20500"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "964f0f2bd212d3c25db82d93b003e8172eff3c59"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "8901513884fa105ba9c514b436f233a607c1ea0d"
     },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
@@ -40824,6 +40904,26 @@
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "aaf9cf30adb4a4a854fa379f98b9f56c4d8c3e72"
     },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "3828715caffd6d93b702dc0dae90f0d439e12a11"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "53e87dc6322873872f5e0c4e333dd95f8f7a7380"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "d5d51f01854e64b89de8ea1eed83c715fa98a30f"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "d96b5ca85e4ea1211e910d1542dfd679c923c128"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "7bc480ad2960b5fd55198b67c7623a6881b01005"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "fa45c2577f6ca051e20e70a0d9fdb4e2d497a572"
@@ -49873,6 +49973,26 @@
     "settings.integrations.caldav.calendarToggle.description": {
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "c605e708275d1f7452e8dd139a07036ae0fd1dc5"
+    },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "5254153a038baefdcc8302425372cf69c4d07ff3"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "9dea85dba52c88b170e3ba46cb7397051244ff23"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "f5fed254e9c01feeff937af5ace52e97e3a0788d"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "d8228a293ec06f99fb93d831a6614f7c9f1b03ff"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "ff2f0cde6c6ae6ba1e842ab8240673d9e6411a12"
     },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
@@ -58924,6 +59044,26 @@
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "6f84d492d26009ef12ea429816fc7d4089831f36"
     },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "e5341896ccb070cda2a63578ee8f263553cb2ba0"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "4ae7c95104765e331de7783cee5d4d4808a88887"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "66a2768557117a74626fa04fa981327be7d74fbf"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "88fc516c99eacba55f8bda3a9a21eee0fe958517"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "86d8e62d5665069dad61dd2d184b86da60146746"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "77209404d1bb568dd127767ddc0f4f24178512b8"
@@ -67973,6 +68113,26 @@
     "settings.integrations.caldav.calendarToggle.description": {
       "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
       "translation": "12107fe853a9d497c97e14c147290e1e53789c25"
+    },
+    "settings.integrations.caldav.syncTasks.name": {
+      "source": "2d336f9795cb33fdf961a1ea047bde5f37d1b071",
+      "translation": "2e5b780f250781db9b87d3763b327aeef1e4b8d6"
+    },
+    "settings.integrations.caldav.syncTasks.description": {
+      "source": "7ce4e776afa6c4a05ab17b0a5b022d07cfc01572",
+      "translation": "de06a9fe8204b943ff5e771c5932f04a5dd4bcf4"
+    },
+    "settings.integrations.caldav.taskCalendar.name": {
+      "source": "5d2cb81cedd8845514f33f2fcd488c272c3158b9",
+      "translation": "0894ea13e6c0fefd4ab15738760fd17954d46cf9"
+    },
+    "settings.integrations.caldav.taskCalendar.description": {
+      "source": "441c5deab9c4f9d74bff16ee24d2f8ccae64e6e7",
+      "translation": "44d78cb7134287a033dd9b0541f0ea61585fa1e2"
+    },
+    "settings.integrations.caldav.taskCalendar.none": {
+      "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
+      "translation": "b71b870136cfee3a05f321c969ea27dd74a9a161"
     },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
