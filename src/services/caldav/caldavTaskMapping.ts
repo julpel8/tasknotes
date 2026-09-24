@@ -8,6 +8,8 @@ export const CALDAV_UID_FIELD = "caldav_uid";
 
 /** Records which task field the to-do's DUE came from, so changes flow back to it. */
 const DATE_FIELD_PROPERTY = "x-tasknotes-date-field";
+/** Marks to-dos written from a task note, as opposed to ones created on a phone. */
+const MANAGED_PROPERTY = "x-tasknotes-note";
 
 export type TaskDateField = "due" | "scheduled";
 
@@ -26,6 +28,9 @@ export interface TodoFields {
 
 export interface TodoSnapshot extends TodoFields {
 	uid: string;
+	/** True when a task note wrote this to-do */
+	managed: boolean;
+	description?: string;
 	/** Epoch milliseconds of LAST-MODIFIED (or DTSTAMP) */
 	lastModified?: number;
 }
@@ -109,6 +114,8 @@ export function readTodo(icsText: string): TodoSnapshot | null {
 
 	return {
 		uid: textValue(vtodo, "uid"),
+		managed: vtodo.hasProperty(MANAGED_PROPERTY),
+		description: textValue(vtodo, "description") || undefined,
 		title: textValue(vtodo, "summary"),
 		completed,
 		date,
@@ -180,6 +187,7 @@ export function writeTodo(existingIcs: string | null, uid: string, fields: TodoF
 	}
 
 	setOptionalText(vtodo, "url", fields.url);
+	vtodo.updatePropertyWithValue(MANAGED_PROPERTY, "1");
 	vtodo.updatePropertyWithValue("dtstamp", nowUtc());
 	vtodo.updatePropertyWithValue("last-modified", nowUtc());
 	return calendar.toString();

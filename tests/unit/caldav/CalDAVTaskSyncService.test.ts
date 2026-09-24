@@ -95,6 +95,13 @@ function createDevice(server: FakeServer, tasks: Map<string, TaskInfo>, frontmat
 				return updated;
 			}),
 			toggleRecurringTaskComplete: jest.fn(),
+			createTask: jest.fn(async (data: Partial<TaskInfo> & { customFrontmatter?: Record<string, unknown> }) => {
+				const path = `TaskNotes/Tasks/${data.title}.md`;
+				const created = task(path, { title: data.title, due: data.due, dateModified: new Date().toISOString() });
+				tasks.set(path, created);
+				frontmatter.set(path, { ...(data.customFrontmatter ?? {}) });
+				return { file: fileFor(path), taskInfo: created };
+			}),
 		},
 		app: {
 			vault: { getAbstractFileByPath: fileFor, getName: () => "notes" },
@@ -264,6 +271,42 @@ describe("CalDAVTaskSyncService", () => {
 		expect(toggle).toHaveBeenCalledTimes(1);
 		expect((toggle.mock.calls[0][1] as Date).toISOString()).toBe("2026-09-25T00:00:00.000Z");
 		expect(plugin.taskService.updateProperty).not.toHaveBeenCalled();
+	});
+
+	it("imports open to-dos created on a phone, once, keeping their UID", async () => {
+		const { service, server, tasks, fm, plugin } = setup();
+		const phoneTodo = (uid: string, summary: string, extra = "") =>
+			["BEGIN:VCALENDAR", "VERSION:2.0", "BEGIN:VTODO", `UID:${uid}`, `SUMMARY:${summary}`, "DTSTAMP:20260901T000000Z", "LAST-MODIFIED:20260901T000000Z", "DUE;VALUE=DATE:20260930", extra, "END:VTODO", "END:VCALENDAR"]
+				.filter(Boolean)
+				.join("\r\n");
+		server.objects.set(`${TASKS_URL}PHONE-1.ics`, { data: phoneTodo("PHONE-1", "Appeler le garage"), etag: '"p1"' });
+		server.objects.set(`${TASKS_URL}PHONE-2.ics`, { data: phoneTodo("PHONE-2", "Déjà fait", "STATUS:COMPLETED"), etag: '"p2"' });
+
+		await service.runPass(true);
+		await service.runPass(true);
+
+		const createTask = plugin.taskService.createTask as jest.Mock;
+		expect(createTask).toHaveBeenCalledTimes(1);
+		expect(createTask.mock.calls[0][0]).toMatchObject({
+			title: "Appeler le garage",
+			due: "2026-09-30",
+			customFrontmatter: { caldav_uid: "PHONE-1" },
+		});
+		expect(fm.get("TaskNotes/Tasks/Appeler le garage.md")?.caldav_uid).toBe("PHONE-1");
+		expect(tasks.size).toBe(1);
+		// The imported to-do is now marked as written by a note.
+		expect(readTodo(server.objects.get(`${TASKS_URL}PHONE-1.ics`)!.data)!.managed).toBe(true);
+	});
+
+	it("never imports to-dos written by a note that has not reached this device", async () => {
+		const server = new FakeServer();
+		const a = setup(server, new Map([["pain.md", task("pain.md")]]));
+		await a.service.runPass(true);
+
+		const b = setup(server, new Map());
+		await b.service.runPass(true);
+
+		expect(b.plugin.taskService.createTask).not.toHaveBeenCalled();
 	});
 
 	it("keeps a phone alarm when rewriting the to-do", async () => {

@@ -143,6 +143,7 @@ export class CalDAVTaskSyncService {
 					this.reconcile(task, (url) => Promise.resolve(byUrl.get(url) ?? null))
 				);
 			}
+			await this.importForeignTodos(objects, tasks);
 		} catch (error) {
 			this.calendarService.reportError(error);
 			tasknotesLogger.warn("CalDAV task pass failed", {
@@ -236,7 +237,7 @@ export class CalDAVTaskSyncService {
 		}
 
 		const url = objectUrlForUid(calendarUrl, uid);
-		const local = this.taskToFields(task);
+		let local = this.taskToFields(task);
 		const object = await loadObject(url);
 
 		if (!object) {
@@ -255,12 +256,54 @@ export class CalDAVTaskSyncService {
 		const serverNewer =
 			(server.lastModified ?? 0) > this.noteModifiedAt(task, file) + CLOCK_TOLERANCE_MS;
 		if (serverNewer) {
-			await this.applyServerChanges(task, local, server);
-			return;
+			const updated = await this.applyServerChanges(task, local, server);
+			// A to-do not yet marked as ours still gets rewritten once, with the marker.
+			if (server.managed) return;
+			local = this.taskToFields(updated);
 		}
 
-		if (todoDiffers(local, server)) {
+		if (!server.managed || todoDiffers(local, server)) {
 			await client.putObject(url, writeTodo(object.data, uid, local), { etag: object.etag });
+		}
+	}
+
+	/**
+	 * Turns open to-dos created outside TaskNotes (e.g. in a phone's reminders
+	 * app) into task notes that keep the to-do's UID, so both stay linked.
+	 * To-dos written by a task note are never imported: their note may simply
+	 * not have reached this device yet.
+	 */
+	private async importForeignTodos(objects: CalDAVObject[], tasks: TaskInfo[]): Promise<void> {
+		const knownUids = new Set<string>();
+		for (const task of tasks) {
+			const file = this.plugin.app.vault.getAbstractFileByPath(task.path);
+			const uid = file instanceof TFile ? this.getStoredUid(file) : undefined;
+			if (uid) knownUids.add(uid);
+		}
+
+		const calendarUrl = this.plugin.settings.caldav.taskCalendarUrl;
+		for (const object of objects) {
+			if (this.destroyed) return;
+			let todo: TodoSnapshot | null;
+			try {
+				todo = readTodo(object.data);
+			} catch {
+				continue;
+			}
+			if (!todo || !todo.uid || todo.managed || todo.completed || knownUids.has(todo.uid)) {
+				continue;
+			}
+			// Only objects named after their UID can be found again from the note.
+			if (object.url !== objectUrlForUid(calendarUrl, todo.uid)) continue;
+
+			knownUids.add(todo.uid);
+			await this.plugin.taskService.createTask({
+				title: todo.title || "Untitled",
+				due: todo.date,
+				details: todo.description,
+				creationContext: "import",
+				customFrontmatter: { [CALDAV_UID_FIELD]: todo.uid },
+			});
 		}
 	}
 
@@ -272,7 +315,7 @@ export class CalDAVTaskSyncService {
 		task: TaskInfo,
 		local: TodoFields,
 		server: TodoSnapshot
-	): Promise<void> {
+	): Promise<TaskInfo> {
 		const taskService = this.plugin.taskService;
 		let current = task;
 
@@ -283,12 +326,12 @@ export class CalDAVTaskSyncService {
 					const target = date ? parseDateToUTC(getDatePart(date)) : undefined;
 					const dateKey = date ? getDatePart(date) : undefined;
 					if (!dateKey || !current.complete_instances?.includes(dateKey)) {
-						current = await taskService.toggleRecurringTaskComplete(current, target);
+						current = (await taskService.toggleRecurringTaskComplete(current, target)) ?? current;
 					}
 				}
 				// Reopening a finished occurrence from the phone has no single meaning
 				// for a repeating task; the next push shows the next occurrence again.
-				return;
+				return current;
 			}
 			const status = server.completed
 				? (this.plugin.statusManager.getCompletedStatuses()[0] ?? "done")
@@ -300,6 +343,7 @@ export class CalDAVTaskSyncService {
 			const field = local.date ? local.dateField : server.dateField;
 			current = await taskService.updateProperty(current, field, server.date);
 		}
+		return current;
 	}
 
 	private async handleDeletedNote(prevCache: unknown): Promise<void> {
