@@ -1865,6 +1865,9 @@ export const ko: TranslationTree = {
 					description: "작업을 받을 CalDAV 캘린더입니다.",
 					none: "캘린더 선택",
 				},
+				notices: {
+					authFailed: "CalDAV: 서버가 사용자 이름 또는 비밀번호를 거부했습니다",
+				},
 				refreshMinutes: { name: "새로 고침 간격(분)", description: "TaskNotes가 서버에서 변경 사항을 가져오는 빈도입니다." },
 			},
 			googleCalendarExport: {
@@ -2281,6 +2284,7 @@ export const ko: TranslationTree = {
 		pauseResumePomodoro: "뽀모도로 타이머 일시 정지/재개",
 		refreshCache: "캐시 새로고침",
 		exportAllTasksIcs: "모든 작업을 ICS 파일로 내보내기",
+		convertCurrentTaskToEvent: "현재 작업을 캘린더 일정으로 변환",
 		viewReleaseNotes: "릴리스 노트 보기",
 		startTimeTrackingCurrentTask: "현재 작업의 시간 추적 시작",
 		stopTimeTrackingCurrentTask: "현재 작업의 시간 추적 중지",
@@ -2833,6 +2837,7 @@ export const ko: TranslationTree = {
 				outlook: "Outlook 캘린더",
 				yahoo: "Yahoo 캘린더",
 				downloadIcs: ".ics 파일 다운로드",
+				convertToEvent: "캘린더 일정으로 변환",
 				syncToGoogle: "Google 캘린더에 동기화",
 				syncToGoogleNotConfigured: "Google 캘린더 동기화가 구성되지 않았습니다",
 				syncToGoogleSuccess: "작업이 Google 캘린더에 동기화되었습니다",
@@ -2954,6 +2959,7 @@ export const ko: TranslationTree = {
 		ics: {
 			showDetails: "세부정보 보기",
 			createTask: "이벤트에서 작업 만들기",
+			convertToTask: "작업으로 변환(일정 삭제)",
 			createNote: "이벤트에서 노트 만들기",
 			linkNote: "기존 노트 연결",
 			copyTitle: "제목 복사",
@@ -3407,5 +3413,15 @@ export const ko: TranslationTree = {
 				save: "저장"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "쓰기 가능한 캘린더가 연결되어 있지 않습니다",
+			taskConverted: "“{title}”이(가) 일정이 되었습니다. 작업은 보관되었습니다",
+			archiveFailed: "일정은 만들었지만 작업을 보관하지 못했습니다",
+			eventConverted: "“{title}”이(가) 작업이 되었습니다. 일정은 삭제되었습니다",
+			eventDeleteFailed: "작업은 만들었지만 일정을 삭제하지 못했습니다",
+			noActiveTask: "현재 파일은 작업이 아닙니다",
+		},
+	},
 };

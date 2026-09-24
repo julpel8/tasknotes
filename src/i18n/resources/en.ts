@@ -2020,6 +2020,9 @@ export const en: TranslationTree = {
 					description: "CalDAV calendar that receives the tasks.",
 					none: "Choose a calendar",
 				},
+				notices: {
+					authFailed: "CalDAV: the server refused the username or password",
+				},
 				refreshMinutes: {
 					name: "Refresh interval (minutes)",
 					description: "How often TaskNotes fetches changes from the server.",
@@ -2477,6 +2480,7 @@ export const en: TranslationTree = {
 		exportAllTasksIcs: "Export all tasks as ICS file",
 		syncAllTasksGoogleCalendar: "Sync all tasks to Google Calendar",
 		syncCurrentTaskGoogleCalendar: "Sync current task to Google Calendar",
+		convertCurrentTaskToEvent: "Convert current task to calendar event",
 		viewReleaseNotes: "View release notes",
 		startTimeTrackingCurrentTask: "Start time tracking for current task",
 		stopTimeTrackingCurrentTask: "Stop time tracking for current task",
@@ -3035,6 +3039,7 @@ export const en: TranslationTree = {
 				outlook: "Outlook Calendar",
 				yahoo: "Yahoo Calendar",
 				downloadIcs: "Download .ics file",
+				convertToEvent: "Convert to calendar event",
 				syncToGoogle: "Sync to Google Calendar",
 				syncToGoogleNotConfigured: "Google Calendar sync not configured",
 				syncToGoogleSuccess: "Task synced to Google Calendar",
@@ -3151,6 +3156,7 @@ export const en: TranslationTree = {
 		ics: {
 			showDetails: "Show details",
 			createTask: "Create task from event",
+			convertToTask: "Convert to task (delete event)",
 			createNote: "Create note from event",
 			linkNote: "Link existing note",
 			copyTitle: "Copy title",
@@ -3616,6 +3622,16 @@ export const en: TranslationTree = {
 				cancel: "Cancel",
 				save: "Save",
 			},
+		},
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "No writable calendar is connected",
+			taskConverted: "“{title}” is now a calendar event; the task was archived",
+			archiveFailed: "Event created, but the task could not be archived",
+			eventConverted: "“{title}” is now a task; the event was deleted",
+			eventDeleteFailed: "Task created, but the event could not be deleted",
+			noActiveTask: "The current file is not a task",
 		},
 	},
 };

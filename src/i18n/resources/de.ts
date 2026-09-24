@@ -1881,6 +1881,9 @@ export const de: TranslationTree = {
 					description: "CalDAV-Kalender, der die Aufgaben erhält.",
 					none: "Kalender wählen",
 				},
+				notices: {
+					authFailed: "CalDAV: Der Server lehnt Benutzername oder Passwort ab",
+				},
 				refreshMinutes: { name: "Aktualisierungsintervall (Minuten)", description: "Wie oft TaskNotes Änderungen vom Server abruft." },
 			},
 			googleCalendarExport: {
@@ -2297,6 +2300,7 @@ export const de: TranslationTree = {
 		pauseResumePomodoro: "Pomodoro-Timer pausieren/fortsetzen",
 		refreshCache: "Cache aktualisieren",
 		exportAllTasksIcs: "Alle Aufgaben als ICS-Datei exportieren",
+		convertCurrentTaskToEvent: "Aktuelle Aufgabe in Kalendertermin umwandeln",
 		viewReleaseNotes: "Versionshinweise anzeigen",
 		startTimeTrackingCurrentTask: "Zeiterfassung für die aktuelle Aufgabe starten",
 		stopTimeTrackingCurrentTask: "Zeiterfassung für die aktuelle Aufgabe stoppen",
@@ -2849,6 +2853,7 @@ export const de: TranslationTree = {
 				outlook: "Outlook Kalender",
 				yahoo: "Yahoo Kalender",
 				downloadIcs: ".ics Datei herunterladen",
+				convertToEvent: "In Kalendertermin umwandeln",
 				syncToGoogle: "Mit Google Kalender synchronisieren",
 				syncToGoogleNotConfigured: "Google Kalender-Synchronisierung nicht konfiguriert",
 				syncToGoogleSuccess: "Aufgabe mit Google Kalender synchronisiert",
@@ -2970,6 +2975,7 @@ export const de: TranslationTree = {
 		ics: {
 			showDetails: "Details anzeigen",
 			createTask: "Aufgabe aus Event erstellen",
+			convertToTask: "In Aufgabe umwandeln (Termin löschen)",
 			createNote: "Notiz aus Event erstellen",
 			linkNote: "Bestehende Notiz verlinken",
 			copyTitle: "Titel kopieren",
@@ -3423,5 +3429,15 @@ export const de: TranslationTree = {
 				save: "Speichern"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "Kein beschreibbarer Kalender verbunden",
+			taskConverted: "„{title}“ ist jetzt ein Termin; die Aufgabe wurde archiviert",
+			archiveFailed: "Termin erstellt, aber die Aufgabe konnte nicht archiviert werden",
+			eventConverted: "„{title}“ ist jetzt eine Aufgabe; der Termin wurde gelöscht",
+			eventDeleteFailed: "Aufgabe erstellt, aber der Termin konnte nicht gelöscht werden",
+			noActiveTask: "Die aktuelle Datei ist keine Aufgabe",
+		},
+	},
 };

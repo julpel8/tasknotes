@@ -1883,6 +1883,9 @@ export const pt: TranslationTree = {
 					description: "Calendário CalDAV que recebe as tarefas.",
 					none: "Escolher um calendário",
 				},
+				notices: {
+					authFailed: "CalDAV: o servidor recusa o utilizador ou a palavra-passe",
+				},
 				refreshMinutes: { name: "Intervalo de atualização (minutos)", description: "Com que frequência o TaskNotes obtém alterações do servidor." },
 			},
 			googleCalendarExport: {
@@ -2299,6 +2302,7 @@ export const pt: TranslationTree = {
 		pauseResumePomodoro: "Pausar/retomar temporizador pomodoro",
 		refreshCache: "Atualizar cache",
 		exportAllTasksIcs: "Exportar todas as tarefas como arquivo ICS",
+		convertCurrentTaskToEvent: "Converter a tarefa atual em evento",
 		viewReleaseNotes: "Ver notas de lançamento",
 		startTimeTrackingCurrentTask: "Iniciar registro de tempo da tarefa atual",
 		stopTimeTrackingCurrentTask: "Parar registro de tempo da tarefa atual",
@@ -2851,6 +2855,7 @@ export const pt: TranslationTree = {
 				outlook: "Calendário do Outlook",
 				yahoo: "Calendário do Yahoo",
 				downloadIcs: "Baixar arquivo .ics",
+				convertToEvent: "Converter em evento",
 				syncToGoogle: "Sincronizar com o Google Agenda",
 				syncToGoogleNotConfigured: "Sincronização com Google Agenda não configurada",
 				syncToGoogleSuccess: "Tarefa sincronizada com o Google Agenda",
@@ -2972,6 +2977,7 @@ export const pt: TranslationTree = {
 		ics: {
 			showDetails: "Mostrar detalhes",
 			createTask: "Criar tarefa a partir do evento",
+			convertToTask: "Converter em tarefa (apaga o evento)",
 			createNote: "Criar nota a partir do evento",
 			linkNote: "Vincular nota existente",
 			copyTitle: "Copiar título",
@@ -3428,5 +3434,15 @@ export const pt: TranslationTree = {
 				save: "Salvar"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "Nenhum calendário editável está ligado",
+			taskConverted: "«{title}» é agora um evento; a tarefa foi arquivada",
+			archiveFailed: "Evento criado, mas não foi possível arquivar a tarefa",
+			eventConverted: "«{title}» é agora uma tarefa; o evento foi apagado",
+			eventDeleteFailed: "Tarefa criada, mas não foi possível apagar o evento",
+			noActiveTask: "O ficheiro atual não é uma tarefa",
+		},
+	},
 };

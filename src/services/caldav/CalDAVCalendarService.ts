@@ -2,6 +2,7 @@ import type TaskNotesPlugin from "../../main";
 import type { ICSEvent } from "../../types";
 import type { CalDAVCalendarSetting } from "../../types/settings";
 import { parseICSEvents } from "../../utils/icsParsing";
+import { publishUserNotice } from "../../core/userNotices";
 import { createTaskNotesLogger } from "../../utils/tasknotesLogger";
 import {
 	CalendarProvider,
@@ -41,6 +42,8 @@ export function getCalDAVCredentials(plugin: TaskNotesPlugin): CalDAVCredentials
 	const settings = plugin.settings.caldav;
 	if (!settings.serverUrl || !settings.username) return null;
 	const password = plugin.app.secretStorage?.getSecret(CALDAV_PASSWORD_SECRET_ID) ?? "";
+	// Without a password every request would be refused; treat CalDAV as not set up.
+	if (!password) return null;
 	return { serverUrl: settings.serverUrl, username: settings.username, password };
 }
 
@@ -68,6 +71,7 @@ export class CalDAVCalendarService extends CalendarProvider {
 	private refreshTimer: number | null = null;
 	private refreshing: Promise<void> | null = null;
 	private destroyed = false;
+	private authFailureReported = false;
 
 	constructor(private readonly plugin: TaskNotesPlugin) {
 		super();
@@ -76,6 +80,20 @@ export class CalDAVCalendarService extends CalendarProvider {
 
 	private get settings() {
 		return this.plugin.settings.caldav;
+	}
+
+	/**
+	 * Tells the user once per session when the server refuses the credentials,
+	 * instead of failing silently on every refresh.
+	 */
+	reportError(error: unknown): void {
+		if (!(error instanceof CalDAVError) || (error.status !== 401 && error.status !== 403)) return;
+		if (this.authFailureReported) return;
+		this.authFailureReported = true;
+		publishUserNotice(
+			this.plugin.emitter,
+			this.plugin.i18n.translate("settings.integrations.caldav.notices.authFailed")
+		);
 	}
 
 	isConfigured(): boolean {
@@ -104,6 +122,7 @@ export class CalDAVCalendarService extends CalendarProvider {
 	 * the enabled flag of calendars already known.
 	 */
 	async listCalendars(): Promise<ProviderCalendar[]> {
+		this.authFailureReported = false;
 		const discovered = await this.client.discoverCalendars();
 		const previous = new Map(this.settings.calendars.map((c) => [c.url, c]));
 		this.settings.calendars = discovered.map(
@@ -205,6 +224,7 @@ export class CalDAVCalendarService extends CalendarProvider {
 						if (object.calendarUrl === calendar.url) nextObjects.set(id, object);
 					}
 				}
+				this.reportError(error);
 				tasknotesLogger.error("CalDAV calendar refresh failed", {
 					category: "provider",
 					operation: "caldav-refresh",

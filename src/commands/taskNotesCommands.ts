@@ -3,6 +3,7 @@ import type TaskNotesPlugin from "../main";
 import type { TranslatedCommandDefinition } from "./types";
 import { createTaskNotesLogger } from "../utils/tasknotesLogger";
 import { showConfirmationModal } from "../modals/ConfirmationModal";
+import { openConvertTaskToEvent } from "../ui/taskEventConversion";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Commands/TaskNotesCommands" });
 
@@ -335,6 +336,19 @@ export function createTaskNotesCommandDefinitions(
 						"settings.integrations.googleCalendarExport.notices.taskSynced"
 					)
 				);
+			},
+		},
+		{
+			id: "convert-current-task-to-calendar-event",
+			nameKey: "commands.convertCurrentTaskToEvent",
+			callback: async (ctx) => {
+				const activeFile = ctx.app.workspace.getActiveFile();
+				const task = activeFile ? await ctx.cacheManager.getTaskInfo(activeFile.path) : null;
+				if (!task) {
+					new Notice(ctx.i18n.translate("taskEventConversion.notices.noActiveTask"));
+					return;
+				}
+				openConvertTaskToEvent(ctx, task);
 			},
 		},
 		{

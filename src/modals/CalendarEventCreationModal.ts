@@ -15,6 +15,9 @@ export interface CalendarEventCreationOptions {
 	start: Date;
 	end: Date;
 	allDay: boolean;
+	/** Prefilled title, e.g. when converting a task into an event */
+	initialTitle?: string;
+	initialDescription?: string;
 	onEventCreated?: () => void;
 }
 
@@ -110,6 +113,7 @@ export class CalendarEventCreationModal extends Modal {
 			.setDesc(this.translate("modals.calendarEventCreation.titleDesc"))
 			.addText((text) => {
 				this.titleInput = text.inputEl;
+				if (this.options.initialTitle) text.setValue(this.options.initialTitle);
 				text.setPlaceholder(
 					this.translate("modals.calendarEventCreation.titlePlaceholder")
 				).onChange(() => this.validateForm());
@@ -142,6 +146,7 @@ export class CalendarEventCreationModal extends Modal {
 			.setDesc(this.translate("modals.calendarEventCreation.descriptionDesc"))
 			.addTextArea((text) => {
 				this.descriptionInput = text.inputEl;
+				if (this.options.initialDescription) text.setValue(this.options.initialDescription);
 				text.setPlaceholder(
 					this.translate("modals.calendarEventCreation.descriptionPlaceholder")
 				);

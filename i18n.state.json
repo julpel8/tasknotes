@@ -4644,6 +4644,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "d5c7edcf7757329a934fe904145faa63335fc8d9"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "3c60f5be4a8cef19dff52d8378380c649d42802c"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "004dab5f40502b97d18cce7825d080c931a668a9"
@@ -5703,6 +5707,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "51ea73cf0223e25e6eeef7d5b5d23f89de52c92e"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "8ce53d47d223cabbab253b6000446365bc674b13"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -7292,6 +7300,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "0dbc4c06eee78b7c3184d0cc2501f53c4371bc44"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "a99e2cfe407db7efba033badeac1c53e8d674a8d"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "24ef2135afe1e056537b17f501be2daf41e583c1"
@@ -7667,6 +7679,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "3937293fb3ab39f9e59a5cdbf29caa636f2b2438"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "396f0e00227c46d319c82ec27270577a23ea7fcc"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -9067,6 +9083,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "70b73bbc118d6d620f99c59b63abd90c84e500b3"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "2a6010d4244247606de6ba1ddc5f3e24716932fa"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "b2177a6725d79b1f49f99d7efcbfafc452ec2b06"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "aac6b7d78919eda8ae14e19dd5e430f13ab1a467"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "da68e9d5a7fe64d9b523fe22bce0b6d88810b1bf"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "b5663447a60462da03c59639213c49828dcdee62"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "f29c16cbd789f3f0048205a2991b506a8dfa574b"
     }
   },
   "es": {
@@ -13714,6 +13754,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "a3ce5e39fd338f01b222f8c766789b68383d8d81"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "6e45059a9b2ffd48fc80c1f922bf1b7db534e0fa"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "dfb77579d96e0e0a0ba9c17daa318ebda61d3b89"
@@ -14773,6 +14817,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "3ed42167300178735bf00da3b2b1cb7e958591fc"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "870292f7fb48e23b8f0a94b0ea1377fbb29f5187"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -16362,6 +16410,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "4dca342bd6b5cba2ee7027834485b2e02b046788"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "fe9d3a7cd01e0ff255e0abaf8dc8c27a519b647b"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "0b818ffa44b0fcd92f45ac6e1a954de9ead0e087"
@@ -16737,6 +16789,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "c388bb96dad9edf060da031475762c89a069446d"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "cf08c724d59379ca2ad964ec6164b7fdde03a3b1"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -18137,6 +18193,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "a0b626d6e9f028dfb8f5b2dad4cff9bcec7cb7aa"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "45c59d856573bd25a8f3445307b39c9fe1aa6b29"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "fd5e94a7a82f35bdbcb62de9355f5f61c02d8b4f"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "ae09a369f24faa2ba466bca1213f5759241fd493"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "37afc32d677d01473af2d7904dff596c80b1ce14"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "4b3a42282ac062c0278e9d6a8fdd82263bdccb1b"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "973d7547c0b7334642e6b5bab0792f5d8fc31773"
     }
   },
   "fr": {
@@ -22784,6 +22864,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "ecd0a9ce70ebaf3dd7147cd3a9d0983b4630c4ba"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "e59d079a2334c21287552cc6c2435a267eb00204"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "7cac269c6329345536205a9105f62b5357cbf655"
@@ -23843,6 +23927,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "a72b2c5cc268d540831c322fc114fc0960da450f"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "6e17ed5b6fdd90a49807f67b7f35dd254bb411ed"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -25432,6 +25520,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "b0f0e355dc4218658896c7fab50265100fc9d510"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "7986558dc4f4aec8c9387e4552064877562b30d4"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "a36efc3bb7d4b4176250a0bac2f4b069cf830a4b"
@@ -25807,6 +25899,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "c6f6674915e1473c4e2ba666235f4e08213a723b"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "e9fdde440e279b279adbb29eeba7a2878c555c4a"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -27207,6 +27303,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "f7c8bcd8b213a6cc4a0cfd3462bd1379e4ef9689"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "0a9eb943475ebd75319e1ac84408addd0052c68d"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "c9e6c29137bf1d29abaa59a3cb96584208bcf658"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "527a644aefc880ff6c71696dca58721b8945a7b9"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "283fe9a6b4c6e97ec1a9162152dc1e3ca42a0426"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "c2f27475fcba297d2ab2a8822dfc24e3b9532404"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "88be59d49fda416656dffb907e013e15356a773e"
     }
   },
   "ja": {
@@ -31854,6 +31974,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "8901513884fa105ba9c514b436f233a607c1ea0d"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "df73ec21536ea52c50105e29c1fca02b3e60ba35"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "b5740b02005a53050011749431bae4829fa8cfa3"
@@ -32913,6 +33037,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "87a8c76411153e92b6b26f9c6404f16844c0a221"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "2dbfadc44083eec9be83b4db6a570d42f9457942"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -34502,6 +34630,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "97b6423b8776d4d8b8de628cbe90958a7194c807"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "4657a4d1eaf52d28074b8418481af4b4ad1ec6a4"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "d95ff4d4fc1d56a271a26570ef1624ec49de9ace"
@@ -34877,6 +35009,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "3c42d0181e96a3ec9ab992451a353085ba2465aa"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "a8573cc72d6441b11398dce49271016558d64832"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -36277,6 +36413,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "fadf24dbc5a9e0bb05b83081423a8be08476103a"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "c0ab1abebeaf823af920e80dc9afd1908c98d0f7"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "6a0612b3de7ab69f0908ca0717337e1737745513"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "bd08c4984752ce27596101adff0a7b5c4159609a"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "5eda161fa74764095b92339842d8aef9fa2114fa"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "4049649103370fc0fd431a558a5e5cfc3df28be1"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "1d1f27f5a7ea23620cf9392eb9797c051aca7b9f"
     }
   },
   "ko": {
@@ -40924,6 +41084,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "7bc480ad2960b5fd55198b67c7623a6881b01005"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "66d988e7955277115328f100dddc132fa55ba89a"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "fa45c2577f6ca051e20e70a0d9fdb4e2d497a572"
@@ -41983,6 +42147,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "3ad28937e0f68c33c18cf487440a18281609c9b4"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "a12a8699da6377372a53ecd82b57082e78216c72"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -43572,6 +43740,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "27a1b179724200b8d0dad019d52fdb5ce00b2558"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "9ad44a4c1ad4b4ba7d21849ad585512a72cfe0b9"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "390472c6ecd81926c8ba235e9d2474ac8db6e5be"
@@ -43947,6 +44119,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "5af8b1b9e43d6d1f5cfbe958585d0f537051bc20"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "26cb749968811cd31cbe93fa84f8663b4e531d36"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -45347,6 +45523,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "1f1712acff27e6664981811ecfa169540904a33b"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "e2226c99c07fcd184f4ac381f160421292b6c1c1"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "04c804f9f569d6012c05102e1d78af5f0c4b45e0"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "291cefa665aadb27e9ffa24f9f3d9359e3011ac6"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "919a2c966ba391996f8991a084eb3a6ba963472e"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "c03cf265f6d4a61c427cb26caf23104605811d3b"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "ced476527b9413fa51f45d23e8ed48a2be7c5523"
     }
   },
   "pt": {
@@ -49994,6 +50194,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "ff2f0cde6c6ae6ba1e842ab8240673d9e6411a12"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "85775f8902c80ebb942b0c40691854c25935c50c"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "aa3fbd9e8c9e930c5dad051801f9a31cfbae04ec"
@@ -51053,6 +51257,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "dc339de24650421ffc37cd5bbce5fba92128651a"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "c8738990b6e805dce1ea73da6cd7371aac7d632a"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -52642,6 +52850,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "7ac0bef82b003bff48029739e6a8a0a7d0d9b049"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "c028137da16bd50bf789ca7186187ae9b21f3dcf"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "192e6dff8789db430420318cdbfb5398452a0c1a"
@@ -53017,6 +53229,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "c3f5c980e7bf5aa95b71d416d3d41cecdb660645"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "e6e39c20b3772aa3d067707f2bcb72ae3062e1ee"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -54417,6 +54633,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "93bf2d32ec3312e6872c77b71a210d7b82cb559e"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "0a774586d8e6af073b0e7d39c8d53dd0d391d29f"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "f301aaa5dcb536163532d214f46d9ae6a2b498f5"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "7cdc654d184bbfe040dad22af0c9fea6cd11c934"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "35a71c1a0f00f7c647d4aec9cabae1d7a23d9622"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "208961682412d5627e2d731bf40885847e7ef9fa"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "3a86c6ffc98296e8a4b0612bf075ce8bd40ed983"
     }
   },
   "ru": {
@@ -59064,6 +59304,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "86d8e62d5665069dad61dd2d184b86da60146746"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "056c92d30887a5e663036a9e3b1544019b95c65b"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "77209404d1bb568dd127767ddc0f4f24178512b8"
@@ -60123,6 +60367,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "ec878afe35db0ea50fbea912f9e7ec56774e3069"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "d559f413d3b24bf18305f3ff2079aa6744488ddc"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -61712,6 +61960,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "ed4eb09d9dd52043625b940d9235186baeb37a45"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "f4582cf5af6d66b52b3b10aed25fe904a3ec0b16"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "15ee8fa9edc288e0baefbeb4ccbd1e43835bee6c"
@@ -62087,6 +62339,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "000229b77ca0c324c2cf9a6476967df95c4c1410"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "4efd9f1a4e6afba06a7fa0244a6beced2d68b0c1"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -63487,6 +63743,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "4864057d626a868fa60f999bed3191d61d045ddc"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "be347e3f28728ff52f379fa6175230709ce0a0c9"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "35cf6a53c80f657d138ce0ebb92b2e4429b0a74d"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "7b8c8b61d787d76564319cc040fd1ebf4c202ae9"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "58bd61e5d9c1c74b1b9cc1651a459b7b6133cc7a"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "338866fff15141a2d4a7df7d6db3ae6e5fed393d"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "16751e482508f683b88c1ef81b217c3a5ceb30ba"
     }
   },
   "zh": {
@@ -68134,6 +68414,10 @@
       "source": "512684129c8bce7fe8a8d4e022e9a93c3e49ac49",
       "translation": "b71b870136cfee3a05f321c969ea27dd74a9a161"
     },
+    "settings.integrations.caldav.notices.authFailed": {
+      "source": "cd274caef465a063780b939deb6288e47445150d",
+      "translation": "1c6326d8e7c99d2d8159d2e6aaf5ea19ad946e87"
+    },
     "settings.integrations.caldav.refreshMinutes.name": {
       "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
       "translation": "7b1a1b090e83437a4994a325ab5e2a65b7854114"
@@ -69193,6 +69477,10 @@
     "commands.syncCurrentTaskGoogleCalendar": {
       "source": "b3a2c7b2038e709301e677d8c1070ee0b8b257a1",
       "translation": "db8ebed62db0a7265b5e13244fc060318c603ccc"
+    },
+    "commands.convertCurrentTaskToEvent": {
+      "source": "2a84aa4ad0a10c8dc44b063bf3487bd63dd8c7f1",
+      "translation": "ff8780b983ff39bfadf76c6a85261f4a5549dba7"
     },
     "commands.viewReleaseNotes": {
       "source": "04c2072af97cf70c22fbf9efa9b62eb2574d23d6",
@@ -70782,6 +71070,10 @@
       "source": "8b180d4c410e3d9062bd65d6dbefe626eec813d8",
       "translation": "ca6e04add356dce504fd2872a341dac6d7b557de"
     },
+    "contextMenus.task.calendar.convertToEvent": {
+      "source": "ed4573fd389ffcd9d12cd6ca0c4e1e9b01a99746",
+      "translation": "0b90c128e4082e23cc6ffbd5e14514dedc97f7a1"
+    },
     "contextMenus.task.calendar.syncToGoogle": {
       "source": "6bcb0757c7198a7caa3dd59c635a4b5555559938",
       "translation": "ca85b62e327481a873b0d6d2c27b2fa226a6f5ff"
@@ -71157,6 +71449,10 @@
     "contextMenus.ics.createTask": {
       "source": "968bb21470e8a827dc5c7dad867286104c50a9e7",
       "translation": "860930c2c39cb65b8fb0c0f07d7846d969438fc3"
+    },
+    "contextMenus.ics.convertToTask": {
+      "source": "93835f746f9783fa87ae3742d5ff9c269118752c",
+      "translation": "5d672f747e9ed07f2e2fe3ea43e5155ff4577902"
     },
     "contextMenus.ics.createNote": {
       "source": "c2dec6b82466cc96bcea05d85883a24a6e29be71",
@@ -72557,6 +72853,30 @@
     "components.recurrenceContextMenu.customRecurrenceModal.save": {
       "source": "efc007a393f66cdb14d57d385822a3d9e36ef873",
       "translation": "fadf24dbc5a9e0bb05b83081423a8be08476103a"
+    },
+    "taskEventConversion.notices.noWritableCalendar": {
+      "source": "131866dfbdc53b4d490d3eef89be8286c24e9c51",
+      "translation": "a4ad475353db150c723fc438acb65ee9c634721b"
+    },
+    "taskEventConversion.notices.taskConverted": {
+      "source": "c9460a64dd82407ccd59640ead48bbff7112e44c",
+      "translation": "572ce63c977d1ca019b2d0768b3f83c2e6032b7c"
+    },
+    "taskEventConversion.notices.archiveFailed": {
+      "source": "7e7edbea83f55d0185868958ca3f7be41a50f00c",
+      "translation": "4e99220b7e52350ac76be019a499588de210118f"
+    },
+    "taskEventConversion.notices.eventConverted": {
+      "source": "a7bad069211bc23c8284180b84cda0dc82a7e3d5",
+      "translation": "a95d79e8a990c9ecd519789143182f7b5a11037f"
+    },
+    "taskEventConversion.notices.eventDeleteFailed": {
+      "source": "d176984f0641834edf331e71874ff336b7f6a45a",
+      "translation": "bc188a24c8bb01445fb19ed0031841689a351b5c"
+    },
+    "taskEventConversion.notices.noActiveTask": {
+      "source": "5dcacae9d41c2a815ce32f962ae04d98d80b3e73",
+      "translation": "f6ea39b1c1b491a066e21e747c4176e636da0759"
     }
   }
 }

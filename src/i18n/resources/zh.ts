@@ -1881,6 +1881,9 @@ export const zh: TranslationTree = {
 					description: "接收任务的 CalDAV 日历。",
 					none: "选择日历",
 				},
+				notices: {
+					authFailed: "CalDAV：服务器拒绝了用户名或密码",
+				},
 				refreshMinutes: { name: "刷新间隔（分钟）", description: "TaskNotes 从服务器获取更改的频率。" },
 			},
 			googleCalendarExport: {
@@ -2297,6 +2300,7 @@ export const zh: TranslationTree = {
 		pauseResumePomodoro: "暂停/恢复番茄钟计时器",
 		refreshCache: "刷新缓存",
 		exportAllTasksIcs: "导出所有任务为ICS文件",
+		convertCurrentTaskToEvent: "将当前任务转换为日历日程",
 		viewReleaseNotes: "查看版本说明",
 		startTimeTrackingCurrentTask: "开始跟踪当前任务的时间",
 		stopTimeTrackingCurrentTask: "停止跟踪当前任务的时间",
@@ -2848,6 +2852,7 @@ export const zh: TranslationTree = {
 				outlook: "Outlook日历",
 				yahoo: "Yahoo日历",
 				downloadIcs: "下载.ics文件",
+				convertToEvent: "转换为日历日程",
 				syncToGoogle: "同步到Google日历",
 				syncToGoogleNotConfigured: "Google日历同步未配置",
 				syncToGoogleSuccess: "任务已同步到Google日历",
@@ -2969,6 +2974,7 @@ export const zh: TranslationTree = {
 		ics: {
 			showDetails: "显示详情",
 			createTask: "从事件创建任务",
+			convertToTask: "转换为任务（删除日程）",
 			createNote: "从事件创建笔记",
 			linkNote: "链接现有笔记",
 			copyTitle: "复制标题",
@@ -3422,5 +3428,15 @@ export const zh: TranslationTree = {
 				save: "保存"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "没有连接可写的日历",
+			taskConverted: "“{title}”已成为日程，任务已归档",
+			archiveFailed: "日程已创建，但无法归档任务",
+			eventConverted: "“{title}”已成为任务，日程已删除",
+			eventDeleteFailed: "任务已创建，但无法删除日程",
+			noActiveTask: "当前文件不是任务",
+		},
+	},
 };

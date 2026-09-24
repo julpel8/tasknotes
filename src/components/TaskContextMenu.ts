@@ -53,6 +53,7 @@ import {
 } from "../ui/occurrenceNoteActions";
 import { createTaskNotesLogger } from "../utils/tasknotesLogger";
 import type { UserMappedField } from "../types/settings";
+import { openConvertTaskToEvent } from "../ui/taskEventConversion";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Components/TaskContextMenu" });
 
@@ -763,6 +764,15 @@ export class TaskContextMenu {
 			});
 
 			submenu.addSeparator();
+
+			// Convert to a calendar event (the task is archived once the event exists)
+			submenu.addItem((subItem) => {
+				subItem.setTitle(this.t("contextMenus.task.calendar.convertToEvent"));
+				subItem.setIcon("arrow-right-left");
+				subItem.onClick(() => {
+					openConvertTaskToEvent(plugin, task);
+				});
+			});
 
 			// Sync to Google Calendar (via API)
 			submenu.addItem((subItem) => {

@@ -9,6 +9,7 @@ import { ContextMenu } from "./ContextMenu";
 import { showCoordinatedMenu, showCoordinatedMenuAtElement } from "./ContextMenuCoordinator";
 import { createTaskNotesLogger } from "../utils/tasknotesLogger";
 import { showNotice } from "../ui/notifications";
+import { canConvertEventToTask, convertEventToTask } from "../ui/taskEventConversion";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Components/ICSEventContextMenu" });
 
@@ -67,6 +68,18 @@ export class ICSEventContextMenu {
 					await this.createTaskFromEvent();
 				})
 		);
+
+		// Convert event to task: create the task, then delete the event
+		if (canConvertEventToTask(plugin, icsEvent)) {
+			this.menu.addItem((item) =>
+				item
+					.setTitle(this.t("contextMenus.ics.convertToTask"))
+					.setIcon("arrow-right-left")
+					.onClick(async () => {
+						await this.convertEventToTask();
+					})
+			);
+		}
 
 		// Create note from event
 		this.menu.addItem((item) =>
@@ -176,6 +189,23 @@ export class ICSEventContextMenu {
 				if (this.options.onUpdate) {
 					this.options.onUpdate();
 				}
+			},
+			{
+				errorMessage: this.t("contextMenus.ics.notices.taskCreateFailure"),
+				noticeHandler: showNotice,
+			}
+		);
+	}
+
+	private async convertEventToTask(): Promise<void> {
+		await SafeAsync.execute(
+			async () => {
+				const path = await convertEventToTask(this.options.plugin, this.options.icsEvent);
+				const file = path ? this.options.plugin.app.vault.getAbstractFileByPath(path) : null;
+				if (file instanceof TFile) {
+					await this.options.plugin.app.workspace.getLeaf().openFile(file);
+				}
+				this.options.onUpdate?.();
 			},
 			{
 				errorMessage: this.t("contextMenus.ics.notices.taskCreateFailure"),

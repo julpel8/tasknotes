@@ -144,6 +144,7 @@ export class CalDAVTaskSyncService {
 				);
 			}
 		} catch (error) {
+			this.calendarService.reportError(error);
 			tasknotesLogger.warn("CalDAV task pass failed", {
 				category: "provider",
 				operation: "caldav-task-pass",

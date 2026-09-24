@@ -114,7 +114,7 @@ function createDevice(server: FakeServer, tasks: Map<string, TaskInfo>, frontmat
 		},
 	} as unknown as TaskNotesPlugin;
 
-	const calendarService = { isConfigured: () => true, client: server } as unknown as CalDAVCalendarService;
+	const calendarService = { isConfigured: () => true, reportError: jest.fn(), client: server } as unknown as CalDAVCalendarService;
 	const service = new CalDAVTaskSyncService(plugin, calendarService);
 	return { service, plugin, storage };
 }

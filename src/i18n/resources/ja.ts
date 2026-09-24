@@ -1881,6 +1881,9 @@ export const ja: TranslationTree = {
 					description: "タスクを受け取る CalDAV カレンダー。",
 					none: "カレンダーを選択",
 				},
+				notices: {
+					authFailed: "CalDAV: サーバーがユーザー名またはパスワードを拒否しました",
+				},
 				refreshMinutes: { name: "更新間隔（分）", description: "TaskNotes がサーバーから変更を取得する頻度。" },
 			},
 			googleCalendarExport: {
@@ -2297,6 +2300,7 @@ export const ja: TranslationTree = {
 		pauseResumePomodoro: "ポモドーロタイマーを一時停止/再開",
 		refreshCache: "キャッシュを更新",
 		exportAllTasksIcs: "すべてのタスクをICSファイルとしてエクスポート",
+		convertCurrentTaskToEvent: "現在のタスクをカレンダーの予定に変換",
 		viewReleaseNotes: "リリースノートを表示",
 		startTimeTrackingCurrentTask: "現在のタスクの時間追跡を開始",
 		stopTimeTrackingCurrentTask: "現在のタスクの時間追跡を停止",
@@ -2849,6 +2853,7 @@ export const ja: TranslationTree = {
 				outlook: "Outlookカレンダー",
 				yahoo: "Yahooカレンダー",
 				downloadIcs: ".icsファイルをダウンロード",
+				convertToEvent: "カレンダーの予定に変換",
 				syncToGoogle: "Googleカレンダーに同期",
 				syncToGoogleNotConfigured: "Googleカレンダー同期が設定されていません",
 				syncToGoogleSuccess: "タスクをGoogleカレンダーに同期しました",
@@ -2970,6 +2975,7 @@ export const ja: TranslationTree = {
 		ics: {
 			showDetails: "詳細を表示",
 			createTask: "イベントからタスクを作成",
+			convertToTask: "タスクに変換（予定を削除）",
 			createNote: "イベントからノートを作成",
 			linkNote: "既存のノートをリンク",
 			copyTitle: "タイトルをコピー",
@@ -3423,5 +3429,15 @@ export const ja: TranslationTree = {
 				save: "保存"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "書き込み可能なカレンダーが接続されていません",
+			taskConverted: "「{title}」は予定になりました。タスクはアーカイブされました",
+			archiveFailed: "予定は作成されましたが、タスクをアーカイブできませんでした",
+			eventConverted: "「{title}」はタスクになりました。予定は削除されました",
+			eventDeleteFailed: "タスクは作成されましたが、予定を削除できませんでした",
+			noActiveTask: "現在のファイルはタスクではありません",
+		},
+	},
 };

@@ -38,4 +38,6 @@ When a change has user-facing documentation, include a canonical tasknotes.dev l
   - Moving a repeating CalDAV event is not supported yet.
 - (#811) Tasks can be sent to a CalDAV calendar as to-dos, so phone reminder apps show them. Checking a task off or changing its date there updates the note. Archived and deleted tasks leave the list.
   - A repeating task is sent with its next date only. Checking it off on the phone completes that occurrence.
+- (#811) Added “Convert to task” on calendar events and “Convert to calendar event” on tasks (task menu and command). Converting an event deletes it once the task exists; converting a task archives it once the event exists. Repeating events cannot be converted yet.
+- CalDAV now stays inactive until a password is entered, and shows a message when the server refuses the username or password.
   - Thanks to @Archetype444 for the request, and to @schobernoise, @slipstyle and @shileiye for their input on it.

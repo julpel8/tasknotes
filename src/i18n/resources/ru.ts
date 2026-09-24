@@ -1881,6 +1881,9 @@ export const ru: TranslationTree = {
 					description: "Календарь CalDAV, в который отправляются задачи.",
 					none: "Выберите календарь",
 				},
+				notices: {
+					authFailed: "CalDAV: сервер отклоняет имя пользователя или пароль",
+				},
 				refreshMinutes: { name: "Интервал обновления (минуты)", description: "Как часто TaskNotes получает изменения с сервера." },
 			},
 			googleCalendarExport: {
@@ -2297,6 +2300,7 @@ export const ru: TranslationTree = {
 		pauseResumePomodoro: "Приостановить/возобновить таймер помодоро",
 		refreshCache: "Обновить кэш",
 		exportAllTasksIcs: "Экспортировать все задачи как файл ICS",
+		convertCurrentTaskToEvent: "Превратить текущую задачу в событие",
 		viewReleaseNotes: "Посмотреть примечания к выпуску",
 		startTimeTrackingCurrentTask: "Начать отслеживание времени для текущей задачи",
 		stopTimeTrackingCurrentTask: "Остановить отслеживание времени для текущей задачи",
@@ -2849,6 +2853,7 @@ export const ru: TranslationTree = {
 				outlook: "Outlook Календарь",
 				yahoo: "Yahoo Календарь",
 				downloadIcs: "Скачать файл .ics",
+				convertToEvent: "Превратить в событие",
 				syncToGoogle: "Синхронизировать с Google Календарём",
 				syncToGoogleNotConfigured: "Синхронизация с Google Календарём не настроена",
 				syncToGoogleSuccess: "Задача синхронизирована с Google Календарём",
@@ -2970,6 +2975,7 @@ export const ru: TranslationTree = {
 		ics: {
 			showDetails: "Показать детали",
 			createTask: "Создать задачу из события",
+			convertToTask: "Превратить в задачу (удалить событие)",
 			createNote: "Создать заметку из события",
 			linkNote: "Связать существующую заметку",
 			copyTitle: "Копировать название",
@@ -3423,5 +3429,15 @@ export const ru: TranslationTree = {
 				save: "Сохранить"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "Нет подключённого календаря с правом записи",
+			taskConverted: "«{title}» теперь событие; задача архивирована",
+			archiveFailed: "Событие создано, но задачу не удалось архивировать",
+			eventConverted: "«{title}» теперь задача; событие удалено",
+			eventDeleteFailed: "Задача создана, но событие не удалось удалить",
+			noActiveTask: "Текущий файл не является задачей",
+		},
+	},
 };

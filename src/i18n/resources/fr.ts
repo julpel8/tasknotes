@@ -1881,6 +1881,9 @@ export const fr: TranslationTree = {
 					description: "Agenda CalDAV qui reçoit les tâches.",
 					none: "Choisir un agenda",
 				},
+				notices: {
+					authFailed: "CalDAV : le serveur refuse l'identifiant ou le mot de passe",
+				},
 				refreshMinutes: { name: "Intervalle de mise à jour (minutes)", description: "Fréquence à laquelle TaskNotes récupère les changements du serveur." },
 			},
 			googleCalendarExport: {
@@ -2297,6 +2300,7 @@ export const fr: TranslationTree = {
 		pauseResumePomodoro: "Mettre en pause/reprendre le minuteur Pomodoro",
 		refreshCache: "Actualiser le cache",
 		exportAllTasksIcs: "Exporter toutes les tâches en fichier ICS",
+		convertCurrentTaskToEvent: "Convertir la tâche courante en événement",
 		viewReleaseNotes: "Voir les notes de version",
 		startTimeTrackingCurrentTask: "Démarrer le suivi du temps pour la tâche actuelle",
 		stopTimeTrackingCurrentTask: "Arrêter le suivi du temps pour la tâche actuelle",
@@ -2849,6 +2853,7 @@ export const fr: TranslationTree = {
 				outlook: "Calendrier Outlook",
 				yahoo: "Calendrier Yahoo",
 				downloadIcs: "Télécharger le fichier .ics",
+				convertToEvent: "Convertir en événement",
 				syncToGoogle: "Synchroniser avec Google Agenda",
 				syncToGoogleNotConfigured: "Synchronisation Google Agenda non configurée",
 				syncToGoogleSuccess: "Tâche synchronisée avec Google Agenda",
@@ -2970,6 +2975,7 @@ export const fr: TranslationTree = {
 		ics: {
 			showDetails: "Afficher les détails",
 			createTask: "Créer une tâche depuis l'événement",
+			convertToTask: "Convertir en tâche (supprime l'événement)",
 			createNote: "Créer une note depuis l'événement",
 			linkNote: "Lier une note existante",
 			copyTitle: "Copier le titre",
@@ -3423,5 +3429,15 @@ export const fr: TranslationTree = {
 				save: "Enregistrer"
 			}
 		}
-	}
+	},
+	taskEventConversion: {
+		notices: {
+			noWritableCalendar: "Aucun agenda modifiable n'est connecté",
+			taskConverted: "« {title} » est devenu un événement ; la tâche est archivée",
+			archiveFailed: "Événement créé, mais la tâche n'a pas pu être archivée",
+			eventConverted: "« {title} » est devenu une tâche ; l'événement est supprimé",
+			eventDeleteFailed: "Tâche créée, mais l'événement n'a pas pu être supprimé",
+			noActiveTask: "Le fichier courant n'est pas une tâche",
+		},
+	},
 };
