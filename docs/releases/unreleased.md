@@ -31,3 +31,9 @@ When a change has user-facing documentation, include a canonical tasknotes.dev l
 ```
 
 -->
+
+## Added
+
+- (#811) Added a CalDAV calendar connection. Calendars from a CalDAV server (Nextcloud, Baïkal, Radicale, iCloud and others) now appear in calendar views, where their events can be created, moved, edited and deleted. The password stays on each device and is never synced.
+  - Moving a repeating CalDAV event is not supported yet.
+  - Thanks to @Archetype444 for the request, and to @schobernoise, @slipstyle and @shileiye for their input on it.

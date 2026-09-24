@@ -46,6 +46,7 @@ import { ICSNoteService } from "../services/ICSNoteService";
 import { OAuthService } from "../services/OAuthService";
 import { GoogleCalendarService } from "../services/GoogleCalendarService";
 import { MicrosoftCalendarService } from "../services/MicrosoftCalendarService";
+import { CalDAVCalendarService } from "../services/caldav/CalDAVCalendarService";
 import { CalendarProviderRegistry } from "../services/CalendarProvider";
 import { PomodoroService } from "../services/PomodoroService";
 import { AutoExportService } from "../services/AutoExportService";
@@ -242,6 +243,8 @@ export function initializeCalendarProviders(plugin: TaskNotesPlugin): void {
 	plugin.calendarProviderRegistry = new CalendarProviderRegistry();
 	plugin.calendarProviderRegistry.register(plugin.googleCalendarService);
 	plugin.calendarProviderRegistry.register(plugin.microsoftCalendarService);
+	plugin.caldavCalendarService = new CalDAVCalendarService(plugin);
+	plugin.calendarProviderRegistry.register(plugin.caldavCalendarService);
 }
 
 export async function registerBasesIntegration(plugin: TaskNotesPlugin): Promise<void> {
@@ -508,6 +511,11 @@ export function initializeServicesLazily(plugin: TaskNotesPlugin): void {
 						plugin.notifyDataChanged(undefined, false, true);
 					});
 					await plugin.microsoftCalendarService.initialize();
+
+					plugin.caldavCalendarService.on("data-changed", () => {
+						plugin.notifyDataChanged(undefined, false, true);
+					});
+					await plugin.caldavCalendarService.initialize();
 				}
 
 				plugin.taskFileLifecycleReconciliationService =

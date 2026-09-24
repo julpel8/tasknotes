@@ -1978,6 +1978,44 @@ export const en: TranslationTree = {
 					serviceUnavailable: "Auto export service not available",
 				},
 			},
+			caldav: {
+				header: "CalDAV",
+				description: "Show and edit the events of any CalDAV server.",
+				enable: {
+					name: "Enable CalDAV",
+					description: "Connect TaskNotes to a CalDAV server.",
+				},
+				serverUrl: {
+					name: "Server URL",
+					description:
+						"Address of the CalDAV server or of your account on it. TaskNotes finds your calendars from there.",
+				},
+				username: {
+					name: "Username",
+					description: "Account name on the CalDAV server.",
+				},
+				password: {
+					name: "Password",
+					description:
+						"Stored in this device's secret storage and never synced. Enter it once on each device.",
+					placeholder: "Password",
+					saved: "Saved on this device",
+				},
+				connect: {
+					name: "Calendars",
+					description: "Connect to the server and refresh the list of calendars.",
+					button: "Connect",
+					success: "CalDAV: {count} calendars found",
+					failure: "CalDAV connection failed: {error}",
+				},
+				calendarToggle: {
+					description: "Show this calendar's events in calendar views.",
+				},
+				refreshMinutes: {
+					name: "Refresh interval (minutes)",
+					description: "How often TaskNotes fetches changes from the server.",
+				},
+			},
 			googleCalendarExport: {
 				header: "Export tasks to Google Calendar",
 				description:

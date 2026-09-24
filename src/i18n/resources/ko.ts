@@ -1836,6 +1836,28 @@ export const ko: TranslationTree = {
 					description: "활성화하면 예약일이 있는 작업만 ICS 내보내기에 포함됩니다."
 				}
 			},
+			caldav: {
+				header: "CalDAV",
+				description: "모든 CalDAV 서버의 일정을 표시하고 편집합니다.",
+				enable: { name: "CalDAV 사용", description: "TaskNotes를 CalDAV 서버에 연결합니다." },
+				serverUrl: { name: "서버 URL", description: "CalDAV 서버 또는 해당 계정의 주소입니다. TaskNotes가 여기서 캘린더를 찾습니다." },
+				username: { name: "사용자 이름", description: "CalDAV 서버의 계정 이름입니다." },
+				password: {
+					name: "비밀번호",
+					description: "이 기기의 보안 저장소에 저장되며 동기화되지 않습니다. 기기마다 한 번 입력하세요.",
+					placeholder: "비밀번호",
+					saved: "이 기기에 저장됨",
+				},
+				connect: {
+					name: "캘린더",
+					description: "서버에 연결하고 캘린더 목록을 새로 고칩니다.",
+					button: "연결",
+					success: "CalDAV: 캘린더 {count}개 찾음",
+					failure: "CalDAV 연결 실패: {error}",
+				},
+				calendarToggle: { description: "이 캘린더의 일정을 캘린더 보기에 표시합니다." },
+				refreshMinutes: { name: "새로 고침 간격(분)", description: "TaskNotes가 서버에서 변경 사항을 가져오는 빈도입니다." },
+			},
 			googleCalendarExport: {
 				header: "Google 캘린더로 작업 내보내기",
 				description: "작업을 Google 캘린더 이벤트로 자동 동기화합니다. 위에서 Google 캘린더가 연결되어 있어야 합니다.",

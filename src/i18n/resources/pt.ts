@@ -1854,6 +1854,28 @@ export const pt: TranslationTree = {
 					description: "Quando ativado, apenas tarefas com data agendada são incluídas nas exportações ICS."
 				}
 			},
+			caldav: {
+				header: "CalDAV",
+				description: "Mostra e edita os eventos de qualquer servidor CalDAV.",
+				enable: { name: "Ativar CalDAV", description: "Liga o TaskNotes a um servidor CalDAV." },
+				serverUrl: { name: "URL do servidor", description: "Endereço do servidor CalDAV ou da sua conta nele. O TaskNotes encontra aí os seus calendários." },
+				username: { name: "Utilizador", description: "Nome da conta no servidor CalDAV." },
+				password: {
+					name: "Palavra-passe",
+					description: "Guardada no armazenamento de segredos deste dispositivo e nunca sincronizada. Introduza-a uma vez em cada dispositivo.",
+					placeholder: "Palavra-passe",
+					saved: "Guardada neste dispositivo",
+				},
+				connect: {
+					name: "Calendários",
+					description: "Ligar ao servidor e atualizar a lista de calendários.",
+					button: "Ligar",
+					success: "CalDAV: {count} calendários encontrados",
+					failure: "Falha na ligação CalDAV: {error}",
+				},
+				calendarToggle: { description: "Mostrar os eventos deste calendário nas vistas de calendário." },
+				refreshMinutes: { name: "Intervalo de atualização (minutos)", description: "Com que frequência o TaskNotes obtém alterações do servidor." },
+			},
 			googleCalendarExport: {
 				header: "Exportar tarefas para o Google Agenda",
 				description: "Sincronize automaticamente suas tarefas para o Google Agenda como eventos. Requer que o Google Agenda esteja conectado acima.",

@@ -257,6 +257,8 @@ export interface TaskNotesSettings {
 	microsoftCalendarSyncTokens: Record<string, string>; // Maps calendar ID to delta link
 	// Google Calendar task export settings
 	googleCalendarExport: GoogleCalendarExportSettings;
+	// CalDAV calendar and task sync (password is stored in Obsidian SecretStorage)
+	caldav: CalDAVSettings;
 	// Debug logging
 	enableDebugLogging: boolean;
 }
@@ -342,6 +344,24 @@ export interface GoogleCalendarExportSettings {
 	defaultEventDuration: number; // Duration in minutes if timed (uses timeEstimate if available)
 	includeObsidianLink: boolean; // Include obsidian:// link in event description
 	defaultReminderMinutes: number | number[] | null; // Popup reminder(s) X minutes before event (null = no reminder)
+}
+
+export interface CalDAVCalendarSetting {
+	url: string; // Absolute collection URL
+	name: string;
+	color?: string;
+	components: string[]; // Component types the collection accepts (VEVENT, VTODO)
+	enabled: boolean; // Show this calendar's events in calendar views
+}
+
+export interface CalDAVSettings {
+	enabled: boolean;
+	serverUrl: string; // Server root or principal URL, e.g. https://example.com/dav.php/
+	username: string;
+	calendars: CalDAVCalendarSetting[]; // Filled by calendar discovery
+	syncTasks: boolean; // Send tasks to the task calendar as CalDAV to-dos
+	taskCalendarUrl: string; // Collection that receives tasks
+	refreshMinutes: number; // How often to fetch server changes
 }
 
 export type TimeblockAttachmentSearchOrder =

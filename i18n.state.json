@@ -4552,6 +4552,86 @@
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "87881e234037a34399221d315b63336c4c6ba00c"
     },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "d14d673e4ddb876a1a95e2d3c8be07d3e8c93fa7"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "b8ba3141b4332ba28548ee41d5be00464b9447cc"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "8c77d141db8c34810b9d082a23750dd1f331a841"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "153a9d06b673bd42e9ad93023c3a9f50e705255a"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "4b74659d93242279ed798c465af777bd3e9abaf1"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "99636bf839dc54fbfc6d2eb330af8b3a8e98d4f8"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "6ee46421912e425853c36153df707c44a601461d"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "0719708d1cc814839bd818fdc27d446652f03383"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "1414b6eab8c7dc5c00052031aff817ff233b84f2"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "0719708d1cc814839bd818fdc27d446652f03383"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "25afa42a7b041a331fa207000e767f5a3f0b25b3"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "33fe92f625e5e1d93b2f0ad659aeb0950c49bc06"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "faa1d8e6480e0a50ed9b9169803c297e491b05d9"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "cd3336ed3e0ef5ff0ac91fdaf621a6d0e7ab6214"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "ed762ab003235c863313c179c9d4d028c767c8a9"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "885af10c79d8f4786f56ac78cde1ce41af6f35a2"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "6b5fb31f2b0d643b7708bda7b5e906add0b7bd8e"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "004dab5f40502b97d18cce7825d080c931a668a9"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "1076aba9671887b41354a47fa21b1480e6ffb697"
+    },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
       "translation": "72cc0b08cd0e4c9143f08fc297e75b0d4bae856c"
@@ -13521,6 +13601,86 @@
     "settings.integrations.autoExport.notices.serviceUnavailable": {
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "13f5ef17bd1c4cc217b4ef4a3575f655b35c1a3c"
+    },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "f731250a64800939f2cf63a223aad875f05c02b8"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "396e5ee0b577ef706a997356b79a46020e6b7330"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "bc7d12da5592385b8c13ddaf94ff4bcfb41fbe9e"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "5dfc338fa207e9adc74eb2bcefc0f307ff244c63"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "93b11e68128dd26a9cd30cccb1c1da45a0e1e1ee"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "3f2ecdef3c6c3b614e34115a95b25944cfa4198a"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "e18d800e951e8efc1c9978ae98dd957e7585234b"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "5a6d1c612954979ea99ee33dbb2d231b00f6ac0a"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "c51db4dd7c132f135b62d9d88d883abdf31eebcf"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "5a6d1c612954979ea99ee33dbb2d231b00f6ac0a"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "7248f36bf981d62a9143e9e76e9f8c0d37d47147"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "6266a080a62abd514e1ef67dfb7c4b1727c2be87"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "01db03755c6496ace653207ebdcac34f994a5164"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "7765ef2d0c69c55e871da9ee75692809ba330ba1"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "3074a67b971ed34f34f43b9e8d82266cbddf0575"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "8c3d9eb2da2fb85cc701a8001c7af9e83b0dd73c"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "22a3d4d36442ff95e32cb42784c540304e985830"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "dfb77579d96e0e0a0ba9c17daa318ebda61d3b89"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "6115a40a449fec3bb7304fe8b99b1b94a7f55a38"
     },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
@@ -22492,6 +22652,86 @@
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "c6c4ced2149d44c5df64fb79ab8ee33ca84bc763"
     },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "23d507191bd86fa48c3fc7a431578570d6a1938d"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "6577e4c933f77f4cef0c4d1a38487cab749fa7e1"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "dadb562a68c62c534c8cef39311322ce542f061d"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "de79061b468169d4fe7036013e83702be2d09d80"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "00d3115fe51f971f55e27f3a1a393be0273e8f23"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "68e546fce7dcec04d5f743a07124bc0724b45294"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "da62d6f731c3ada35b2b48de1c9aa4a91c419bfd"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "94e2f3ee14b92e2e675a8f6118d28738dbf5c6ba"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "0203689a6dacd0cb05cd05215503e43c5d63cf1e"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "94e2f3ee14b92e2e675a8f6118d28738dbf5c6ba"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "0aabe9a919bf9afb1509f5f3fba760f382d4bf1c"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "d2daa2b69fb8c308eaef2411336fa44ddb8258ec"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "ed56cbb5b4c473c73e18a6bd36ebfdcdc8a0c670"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "fedf2439f275db3b471d35c2e773398bfff1c9eb"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "d8acd9d282154a30c5bf3f101641b25207c4c059"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "1527af5d7f6f21d33673e78cf4cb26117aa51f33"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "2b18f2f02850c12da999bae415c608a2516459d8"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "7cac269c6329345536205a9105f62b5357cbf655"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "bf6120e6cef4e453660d26c45da3402bba752b82"
+    },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
       "translation": "d231af5d1306ed74e3916500a39af6a46a9ab3d3"
@@ -31461,6 +31701,86 @@
     "settings.integrations.autoExport.notices.serviceUnavailable": {
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "1ade6968a1e13676c8333fb9230faf97f4c119ab"
+    },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "c50a2768047db651bf2826e74ba2bf996b018c7b"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "ac8dbeed3222143afd1cfb0af46556f72d6dc8bf"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "52770a4f5c1898088003517ab50bb4cefb683c03"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "9b5458c5d63dbde321909c2c408d925992129712"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "e48ab13d479247c8443c724a369f4128a9a5b93f"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "7d25d9bcaa8b18e0650d012ac992aa87fea35398"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "92027761faf5df533f923123ba58db868805e58d"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "a9694dc2e83bf1d3dd839259eaeb984fbbd86b31"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "08062ce4fb131da7375bb0c389bcb46d91743373"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "a9694dc2e83bf1d3dd839259eaeb984fbbd86b31"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "230e43099a9e3717f0a18dd7cbbd746e63d5f8e9"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "340ba3962c527f49e49344dece05361c260a6ad1"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "529a3ada94c9bcec2a9423e888eb62793cb87ee5"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "5119847c0093ee788db481e7654b6c85b14ee5ac"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "722bb5529c42d77afb5591a54dc7f7495267e8cf"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "258d51194a804d6e5155ca0c3d37ed1835d994a7"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "fbef8f01cdfabf186772e01742b9cc6eab257b52"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "b5740b02005a53050011749431bae4829fa8cfa3"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "9c3805e33990585edfba87fb7e740862a09e80b9"
     },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
@@ -40432,6 +40752,86 @@
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "b09dd809fc31e9cd4cc8051938b2e394254dd4a3"
     },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "c45739eb2cb4f2461263017d1e602cc562ce81e8"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "51aef9560c4c5427f9d072e7e260ae19d099e943"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "049a2d01be7cc9251088546164d7b0ba12bb58cb"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "1f3e343f5d6a2201bdee34c21af4e96f52c8e69b"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "dbbcdd4852d7d0a499896bb43a1bbf95928ac8bc"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "2cc04d4ca53819cc0d6b23355f2fbcf66b847d0f"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "97d590febf9482bb32960c110adffd2de4b18be5"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "81973897c75710d09ad0e0711caf6f51db78ea21"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "e55de48109448c75d92276c21861f3f6fff910ab"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "81973897c75710d09ad0e0711caf6f51db78ea21"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "c831e5056e91bb575505b1c72dffbb7bb085c051"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "fc8c5b6975f76dd90501f70e910006ef7b22aedf"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "0e75ef9659fb1651b687cf535680d4be9b9073f0"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "52b7ec5f765668ebf4b67e67f416e22d8701abca"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "980fcd2dc30d0b670312582a434a1c56be2a9801"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "d53a3aee61499d6435740cc7319b320c96835cad"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "aaf9cf30adb4a4a854fa379f98b9f56c4d8c3e72"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "fa45c2577f6ca051e20e70a0d9fdb4e2d497a572"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "7d1f5863d3ed288cca80086f993db6ff4ac9250c"
+    },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
       "translation": "ce27706d477c5bf029b1b70e16b3bd7af9851b98"
@@ -49401,6 +49801,86 @@
     "settings.integrations.autoExport.notices.serviceUnavailable": {
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "39915ff77737701ee07b3cebe996f55bf3201c4f"
+    },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "910afdbafd495ba7c00a0a3b764d77cb7a9ff6b1"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "d9afee02e081449c6a51ce0ad3f7245eba164129"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "1dcfc8fd22a4f11396676fdf5b3846fbee814a65"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "b94ee595150fe138be0eba719b4a2a7feba0f8bd"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "ef6f704709120e3d8fb9e99be22feef03d1447ed"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "e004f9d964b70d6917d582bf4c6cab170086ede3"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "1fab79a7cd2b08f6b167a37baad4a50c293080b9"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "8113518b17b94ec897f1b91249feb443da0a596c"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "06bcfaa4489f285c9eef188704c812ad3bde58b3"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "8113518b17b94ec897f1b91249feb443da0a596c"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "0195a67b19f2e37b633a3cb93883cbadacec81c0"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "28ea0a95d84bf773dbc473ca5a6ecd3bade3420a"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "ed800ad3d761c71363f5d1a71fbb27ea03c1a5fe"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "8dfb09be6f9e4452667c100e2b42ba9f5eccce43"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "6a921b265cd1371c0f0dd40b00ad325f1ae3cda6"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "e2b6801da6ca40567815fef62f43177084b12a0d"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "c605e708275d1f7452e8dd139a07036ae0fd1dc5"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "aa3fbd9e8c9e930c5dad051801f9a31cfbae04ec"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "623bd7cbe0e0494de2442c2a0bc401844d730a00"
     },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
@@ -58372,6 +58852,86 @@
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "423e0e04c04005ef22c476d658f7bdc92b4cbe1a"
     },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "1f02df17ae781626528c2e44154c28519bbbe298"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "a6d3576daac1b131f794d8f3bd63f51eed21cae3"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "ac5c433d48d3cfa1342e5026e139614b5fae1a46"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "42b42e57f43886c6576345f4c1b6ccb873235b83"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "ec3de1281a0f4ed303002509d2216757d92fa284"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "a79f8a521d2de4f6690287d5aa5b34cf21a0796a"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "f3d1da4b83837d6a677c41c869a22c482f768d35"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "14f7c63cc1280f8f002ed45494ef2a6afe165805"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "29bfa094e59584e111d9c8ec4696631ab89f7cc1"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "14f7c63cc1280f8f002ed45494ef2a6afe165805"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "5f023053ef338ac68f0e9d75c920cc7c8ae6f8ed"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "5f4cc3b3d23a82c5cc2bc916fdf5593691af3f6d"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "46c18f7bdca8ecc7c607380d7a5c6dcb956df4ba"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "6f687d29f727d4369c2604bf2b7d4ce6562f7a5b"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "91044a87f24070d767c38e26479e177f1328827c"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "3af41349b0a5f1e3ed0e090c968fec79e0e7e6ec"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "6f84d492d26009ef12ea429816fc7d4089831f36"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "77209404d1bb568dd127767ddc0f4f24178512b8"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "47a52d74e68f428494e4f9d6aa38eaff8c5c0d46"
+    },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",
       "translation": "e8e7a11bdda0777951c032893fea52c41c61b2a4"
@@ -67341,6 +67901,86 @@
     "settings.integrations.autoExport.notices.serviceUnavailable": {
       "source": "1b69a3770528d48e5851443f5dc568a407c0e69f",
       "translation": "6891b9e3e425435bdddbea4882e5bae37e788ece"
+    },
+    "settings.integrations.caldav.header": {
+      "source": "64f9720e78a4dc84258b676706d782b8e707f795",
+      "translation": "64f9720e78a4dc84258b676706d782b8e707f795"
+    },
+    "settings.integrations.caldav.description": {
+      "source": "a2f69dcdf33ee691dc1c8d3cdaefd8c86305abe9",
+      "translation": "eeb0a52d02c12c45ca6679a55eb45aaa9ea35d7a"
+    },
+    "settings.integrations.caldav.enable.name": {
+      "source": "d5815573f4146fdba852c5c95788a7429e5bdc22",
+      "translation": "aa8ae524d292755747376932d708d97f47b55d1c"
+    },
+    "settings.integrations.caldav.enable.description": {
+      "source": "58a308fab7cc19fd4e989496a6eca9b1aff31f73",
+      "translation": "9830370ac273207853a4e8bf56a7570c83f6834d"
+    },
+    "settings.integrations.caldav.serverUrl.name": {
+      "source": "1d5d1effa999db571869970c0ccf9ad86e9d96a9",
+      "translation": "2eb291f695fe0d856c31ddf2bd7a0f229b51c0b0"
+    },
+    "settings.integrations.caldav.serverUrl.description": {
+      "source": "cb448338a270e8e4fac93fea12bb618fe9d3ac61",
+      "translation": "0afe43526124e50bb253414a6ab54be4323f7194"
+    },
+    "settings.integrations.caldav.username.name": {
+      "source": "84c29015de33e5d22422382a372caba5c58f8c01",
+      "translation": "a1aaf352cb07ffc94d15265ba8e21efc821ca9e3"
+    },
+    "settings.integrations.caldav.username.description": {
+      "source": "c177243d11af799d47999a3e502f343beadf323b",
+      "translation": "5fdc0fd7ff4009fd84c46a66c28af134c0af536b"
+    },
+    "settings.integrations.caldav.password.name": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "c839a8ff17885af0b098662ccc3ac5e3111b3b3b"
+    },
+    "settings.integrations.caldav.password.description": {
+      "source": "cfdec47f1900a07aea0b1c6662b3dcf725a44049",
+      "translation": "b2396829ce8db4e6b203c73896997c7228f2ea8b"
+    },
+    "settings.integrations.caldav.password.placeholder": {
+      "source": "8be3c943b1609fffbfc51aad666d0a04adf83c9d",
+      "translation": "c839a8ff17885af0b098662ccc3ac5e3111b3b3b"
+    },
+    "settings.integrations.caldav.password.saved": {
+      "source": "87222e82bf5d208052c68fa66c93d131fa18fc67",
+      "translation": "74f16749aa2e4c19bbc111e476c7ea9ed7f8797c"
+    },
+    "settings.integrations.caldav.connect.name": {
+      "source": "9444501818e6c638233f607a1008d6adffed491c",
+      "translation": "2ecbc11608d1df5c4df3bca6864abb9faac6a3fb"
+    },
+    "settings.integrations.caldav.connect.description": {
+      "source": "35024011708c78b2e4363fa5d100ba83f84e91c9",
+      "translation": "c24115fc3ce5ed06b0c5f63e60078bf7756fab95"
+    },
+    "settings.integrations.caldav.connect.button": {
+      "source": "b65463cb6a42a17de514acc4659f7fd331e0876a",
+      "translation": "7328deebb5bc3ce53dc52471b73df331f6a0f707"
+    },
+    "settings.integrations.caldav.connect.success": {
+      "source": "4e991810bab2a33f08a6f535f9c093db6aadf58e",
+      "translation": "e25864f32afaef2fecf918f5699661ad830edc35"
+    },
+    "settings.integrations.caldav.connect.failure": {
+      "source": "17890bfd3a3b19aa767be15c0b5db05143b2fa3d",
+      "translation": "c9fa689517e1d050b859a7c30937779683b07916"
+    },
+    "settings.integrations.caldav.calendarToggle.description": {
+      "source": "4be28075dcefdb05258e889d9e46ebd067cd3a74",
+      "translation": "12107fe853a9d497c97e14c147290e1e53789c25"
+    },
+    "settings.integrations.caldav.refreshMinutes.name": {
+      "source": "0a5028e0e631e9da6f6f77b86f58e5b0ca0fd336",
+      "translation": "7b1a1b090e83437a4994a325ab5e2a65b7854114"
+    },
+    "settings.integrations.caldav.refreshMinutes.description": {
+      "source": "aa7fc5be11b79361e8cc7fa074f6a53bcb5869e8",
+      "translation": "38e3bfc649299ceeb78a01d0b82cff667448a0d7"
     },
     "settings.integrations.googleCalendarExport.header": {
       "source": "869c551781d06c3b2556af5856a42342c1d53b96",

@@ -1852,6 +1852,28 @@ export const ja: TranslationTree = {
 					description: "有効にすると、予定日のあるタスクだけがICSエクスポートに含まれます。"
 				}
 			},
+			caldav: {
+				header: "CalDAV",
+				description: "任意の CalDAV サーバーの予定を表示・編集します。",
+				enable: { name: "CalDAV を有効化", description: "TaskNotes を CalDAV サーバーに接続します。" },
+				serverUrl: { name: "サーバー URL", description: "CalDAV サーバー、またはそのアカウントのアドレス。TaskNotes はここからカレンダーを見つけます。" },
+				username: { name: "ユーザー名", description: "CalDAV サーバーのアカウント名。" },
+				password: {
+					name: "パスワード",
+					description: "このデバイスのシークレットストレージに保存され、同期されません。各デバイスで一度入力してください。",
+					placeholder: "パスワード",
+					saved: "このデバイスに保存済み",
+				},
+				connect: {
+					name: "カレンダー",
+					description: "サーバーに接続してカレンダー一覧を更新します。",
+					button: "接続",
+					success: "CalDAV: {count} 件のカレンダーが見つかりました",
+					failure: "CalDAV 接続に失敗しました: {error}",
+				},
+				calendarToggle: { description: "このカレンダーの予定をカレンダービューに表示します。" },
+				refreshMinutes: { name: "更新間隔（分）", description: "TaskNotes がサーバーから変更を取得する頻度。" },
+			},
 			googleCalendarExport: {
 				header: "タスクをGoogleカレンダーにエクスポート",
 				description: "タスクを自動的にGoogleカレンダーのイベントとして同期します。上記でGoogleカレンダーが接続されている必要があります。",

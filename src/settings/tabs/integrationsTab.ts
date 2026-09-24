@@ -33,6 +33,7 @@ import {
 	type CardSection,
 } from "../components/CardComponent";
 import { createTaskNotesLogger } from "../../utils/tasknotesLogger";
+import { renderCalDAVSettings } from "./caldavSettings";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Settings/Tabs/IntegrationsTab" });
 
@@ -805,6 +806,10 @@ export function renderIntegrationsTab(
 
 	// Initial render
 	void renderMicrosoftCalendarCard();
+
+	renderCalDAVSettings(container, plugin, save, translate, () =>
+		renderIntegrationsTab(container, plugin, save)
+	);
 
 	// Google Calendar Task Export Section
 	createSettingGroup(

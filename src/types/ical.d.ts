@@ -11,7 +11,11 @@ declare module 'ical.js' {
         getAllProperties(name: string): Property[];
         addSubcomponent(component: Component): Component;
         updatePropertyWithValue(name: string, value: unknown): Property;
+        addPropertyWithValue(name: string, value: unknown): Property;
+        hasProperty(name: string): boolean;
+        removeAllProperties(name?: string): boolean;
         toJSON(): unknown;
+        toString(): string;
     }
 
     export interface Property {
@@ -46,7 +50,10 @@ declare module 'ical.js' {
         minute: number;
         second: number;
         zone: TimezoneRef | null | undefined;
-        fromJSDate(date: Date): void;
+        static fromDateString(value: string): Time;
+        static fromDateTimeString(value: string): Time;
+        static fromJSDate(date: Date, useUTC?: boolean): Time;
+        fromJSDate(date: Date, useUTC?: boolean): void;
         toJSDate(): Date;
         toUnixTime(): number;
         toString(): string;

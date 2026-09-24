@@ -222,6 +222,10 @@ export function buildSettingsFromLoadedData(data: LoadedSettingsData | null): Se
 			...DEFAULT_SETTINGS.icsIntegration,
 			...(loadedData?.icsIntegration || {}),
 		},
+		caldav: {
+			...DEFAULT_SETTINGS.caldav,
+			...(loadedData?.caldav || {}),
+		},
 		nlpTriggers: {
 			...DEFAULT_SETTINGS.nlpTriggers,
 			...(loadedData?.nlpTriggers || {}),

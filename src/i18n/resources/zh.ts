@@ -1852,6 +1852,28 @@ export const zh: TranslationTree = {
 					description: "启用后，只有带计划日期的任务会包含在 ICS 导出中。"
 				}
 			},
+			caldav: {
+				header: "CalDAV",
+				description: "显示并编辑任意 CalDAV 服务器的日程。",
+				enable: { name: "启用 CalDAV", description: "将 TaskNotes 连接到 CalDAV 服务器。" },
+				serverUrl: { name: "服务器地址", description: "CalDAV 服务器或其中账户的地址。TaskNotes 会从这里找到你的日历。" },
+				username: { name: "用户名", description: "CalDAV 服务器上的账户名。" },
+				password: {
+					name: "密码",
+					description: "保存在本设备的密钥存储中，不会同步。请在每台设备上输入一次。",
+					placeholder: "密码",
+					saved: "已保存在本设备",
+				},
+				connect: {
+					name: "日历",
+					description: "连接服务器并刷新日历列表。",
+					button: "连接",
+					success: "CalDAV：找到 {count} 个日历",
+					failure: "CalDAV 连接失败：{error}",
+				},
+				calendarToggle: { description: "在日历视图中显示此日历的日程。" },
+				refreshMinutes: { name: "刷新间隔（分钟）", description: "TaskNotes 从服务器获取更改的频率。" },
+			},
 			googleCalendarExport: {
 				header: "将任务导出到Google日历",
 				description: "自动将您的任务同步到Google日历作为事件。需要在上方连接Google日历。",

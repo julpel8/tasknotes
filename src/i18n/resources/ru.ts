@@ -1852,6 +1852,28 @@ export const ru: TranslationTree = {
 					description: "Если включено, в ICS-экспорт включаются только задачи с запланированной датой."
 				}
 			},
+			caldav: {
+				header: "CalDAV",
+				description: "Показывать и изменять события любого сервера CalDAV.",
+				enable: { name: "Включить CalDAV", description: "Подключить TaskNotes к серверу CalDAV." },
+				serverUrl: { name: "Адрес сервера", description: "Адрес сервера CalDAV или вашей учётной записи на нём. TaskNotes найдёт там ваши календари." },
+				username: { name: "Имя пользователя", description: "Имя учётной записи на сервере CalDAV." },
+				password: {
+					name: "Пароль",
+					description: "Хранится в защищённом хранилище этого устройства и не синхронизируется. Введите его один раз на каждом устройстве.",
+					placeholder: "Пароль",
+					saved: "Сохранён на этом устройстве",
+				},
+				connect: {
+					name: "Календари",
+					description: "Подключиться к серверу и обновить список календарей.",
+					button: "Подключиться",
+					success: "CalDAV: найдено календарей: {count}",
+					failure: "Ошибка подключения CalDAV: {error}",
+				},
+				calendarToggle: { description: "Показывать события этого календаря в представлениях календаря." },
+				refreshMinutes: { name: "Интервал обновления (минуты)", description: "Как часто TaskNotes получает изменения с сервера." },
+			},
 			googleCalendarExport: {
 				header: "Экспорт задач в Google Календарь",
 				description: "Автоматически синхронизируйте ваши задачи с Google Календарём как события. Требуется подключение Google Календаря выше.",

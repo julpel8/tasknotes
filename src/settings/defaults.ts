@@ -7,6 +7,7 @@ import {
 	ProjectAutosuggestSettings,
 	NLPTriggersConfig,
 	GoogleCalendarExportSettings,
+	CalDAVSettings,
 } from "../types/settings";
 import { DEFAULT_FIELD_MAPPING } from "../core/defaultFieldMapping";
 export { DEFAULT_FIELD_MAPPING } from "../core/defaultFieldMapping";
@@ -187,6 +188,16 @@ export const DEFAULT_ICS_INTEGRATION_SETTINGS: ICSIntegrationSettings = {
 	// Task creation defaults
 	useICSEndAsDue: false, // Preserve existing behavior: don't set due date from ICS events
 	recurringEventRelatedNotesMode: "series", // Preserve existing behavior: link recurring event notes across the series
+};
+
+export const DEFAULT_CALDAV_SETTINGS: CalDAVSettings = {
+	enabled: false,
+	serverUrl: "",
+	username: "",
+	calendars: [],
+	syncTasks: false,
+	taskCalendarUrl: "",
+	refreshMinutes: 5,
 };
 
 export const DEFAULT_GOOGLE_CALENDAR_EXPORT: GoogleCalendarExportSettings = {
@@ -415,6 +426,7 @@ export const DEFAULT_SETTINGS: TaskNotesSettings = {
 	microsoftCalendarSyncTokens: {},
 	// Google Calendar task export settings
 	googleCalendarExport: DEFAULT_GOOGLE_CALENDAR_EXPORT,
+	caldav: DEFAULT_CALDAV_SETTINGS,
 	// Debug logging
 	enableDebugLogging: false,
 };
