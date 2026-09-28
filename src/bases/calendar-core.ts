@@ -53,6 +53,8 @@ import {
 	type CalendarTaskEventContext,
 } from "./calendarTaskEvents";
 import { createTaskNotesLogger } from "../utils/tasknotesLogger";
+import { caldavSubscriptionId } from "../services/caldav/caldavIds";
+import { getProviderFromSubscriptionId } from "../utils/calendarUtils";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Bases/CalendarCore" });
 
@@ -683,41 +685,58 @@ export function createICSEvent(
 	options: ICSEventRenderOptions = {}
 ): CalendarEvent | null {
 	try {
-		// Check if this is a Google Calendar or Microsoft Calendar event
-		const isGoogleCalendar = icsEvent.subscriptionId.startsWith("google-");
-		const isMicrosoftCalendar = icsEvent.subscriptionId.startsWith("microsoft-");
+		const provider = getProviderFromSubscriptionId(icsEvent.subscriptionId);
 
 		let backgroundColor: string;
 		let borderColor: string;
 		let textColor: string;
 		let subscriptionName: string;
+		let editable = true; // Provider events are editable, ICS subscriptions are not
 
-		if (isGoogleCalendar) {
-			// Google Calendar event - use event's color if available
-			borderColor = icsEvent.color || "#4285F4"; // Default to Google Blue if no color
-			backgroundColor = hexToRgba(borderColor, 0.2);
-			textColor = getEventTextColor(true); // Use theme-appropriate text color
-			subscriptionName = "Google Calendar";
-		} else if (isMicrosoftCalendar) {
-			// Microsoft Calendar event - use event's color if available
-			borderColor = icsEvent.color || "#0078D4"; // Default to Microsoft Blue if no color
-			backgroundColor = hexToRgba(borderColor, 0.2);
-			textColor = getEventTextColor(true); // Use theme-appropriate text color
-			subscriptionName = "Microsoft Calendar";
-		} else {
-			// ICS subscription event - use subscription settings
-			const subscription = plugin.icsSubscriptionService
-				?.getSubscriptions()
-				.find((sub) => sub.id === icsEvent.subscriptionId);
+		switch (provider) {
+			case "google":
+				// Google Calendar event - use event's color if available
+				borderColor = icsEvent.color || "#4285F4"; // Default to Google Blue if no color
+				backgroundColor = hexToRgba(borderColor, 0.2);
+				textColor = getEventTextColor(true); // Use theme-appropriate text color
+				subscriptionName = "Google Calendar";
+				break;
+			case "microsoft":
+				// Microsoft Calendar event - use event's color if available
+				borderColor = icsEvent.color || "#0078D4"; // Default to Microsoft Blue if no color
+				backgroundColor = hexToRgba(borderColor, 0.2);
+				textColor = getEventTextColor(true); // Use theme-appropriate text color
+				subscriptionName = "Microsoft Calendar";
+				break;
+			case "caldav":
+				// CalDAV event - the service sets the calendar's color on each event
+				borderColor = icsEvent.color || "#3788d8";
+				backgroundColor = hexToRgba(borderColor, 0.2);
+				textColor = getEventTextColor(true);
+				subscriptionName =
+					plugin.caldavCalendarService
+						?.getAvailableCalendars()
+						.find(
+							(calendar) =>
+								caldavSubscriptionId(calendar.id) === icsEvent.subscriptionId
+						)?.summary || "CalDAV";
+				break;
+			default: {
+				// ICS subscription event - use subscription settings
+				const subscription = plugin.icsSubscriptionService
+					?.getSubscriptions()
+					.find((sub) => sub.id === icsEvent.subscriptionId);
 
-			if (!subscription || !subscription.enabled) {
-				return null;
+				if (!subscription || !subscription.enabled) {
+					return null;
+				}
+
+				borderColor = normalizeThemeColor(subscription.color, "#3788d8");
+				backgroundColor = hexToRgba(borderColor, 0.2);
+				textColor = isCssVariable(borderColor) ? getEventTextColor(true) : borderColor;
+				subscriptionName = subscription.name;
+				editable = false;
 			}
-
-			borderColor = normalizeThemeColor(subscription.color, "#3788d8");
-			backgroundColor = hexToRgba(borderColor, 0.2);
-			textColor = isCssVariable(borderColor) ? getEventTextColor(true) : borderColor;
-			subscriptionName = subscription.name;
 		}
 
 		const { start, end } = normalizeExternalTimedEventRange(
@@ -735,13 +754,13 @@ export function createICSEvent(
 			backgroundColor: backgroundColor,
 			borderColor: borderColor,
 			textColor: textColor,
-			editable: isGoogleCalendar || isMicrosoftCalendar, // Google and Microsoft Calendar events are editable, ICS subscriptions are not
+			editable,
 			extendedProps: {
 				icsEvent: icsEvent,
 				eventType: "ics",
 				subscriptionName: subscriptionName,
-				isGoogleCalendar: isGoogleCalendar,
-				isMicrosoftCalendar: isMicrosoftCalendar,
+				isGoogleCalendar: provider === "google",
+				isMicrosoftCalendar: provider === "microsoft",
 				relatedNoteCount:
 					options.relatedNoteCount && options.relatedNoteCount > 0
 						? options.relatedNoteCount

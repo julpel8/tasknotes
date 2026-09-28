@@ -2,6 +2,7 @@ import type { BasesAllOptions, BasesOptions, BasesViewConfig } from "obsidian";
 import type TaskNotesPlugin from "../main";
 import { DEFAULT_MINI_CALENDAR_HEAT_MAP_MAX_COUNT } from "./MiniCalendarView";
 import { isNoteFileOrFormulaProperty } from "./propertyFilters";
+import { caldavSubscriptionId } from "../services/caldav/caldavIds";
 
 type CalendarOptionsConfig = Pick<BasesViewConfig, "get">;
 type Translate = (key: string) => string;
@@ -122,6 +123,20 @@ function buildExternalCalendarToggleGroups(
 			items: microsoftCalendars.map((cal) => ({
 				type: "toggle",
 				key: `showMicrosoftCalendar_${cal.id}`,
+				displayName: cal.summary || cal.id,
+				default: true,
+			})),
+		});
+	}
+
+	const caldavCalendars = plugin.caldavCalendarService?.getAvailableCalendars() ?? [];
+	if (caldavCalendars.length > 0) {
+		options.push({
+			type: "group",
+			displayName: t("groups.caldavCalendars") || "CalDAV calendars",
+			items: caldavCalendars.map((cal) => ({
+				type: "toggle",
+				key: `showCalDAVCalendar_${caldavSubscriptionId(cal.id)}`,
 				displayName: cal.summary || cal.id,
 				default: true,
 			})),

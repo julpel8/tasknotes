@@ -105,6 +105,7 @@ export function getCalendarConfigSnapshotKeys(options: {
 	icsCalendarIds?: readonly unknown[];
 	googleCalendarIds?: readonly unknown[];
 	microsoftCalendarIds?: readonly unknown[];
+	caldavCalendarIds?: readonly unknown[];
 } = {}): string[] {
 	return [
 		...CALENDAR_CONFIG_SNAPSHOT_KEYS,
@@ -115,6 +116,7 @@ export function getCalendarConfigSnapshotKeys(options: {
 		...normalizeProviderIds(options.microsoftCalendarIds).map(
 			(id) => `showMicrosoftCalendar_${id}`
 		),
+		...normalizeProviderIds(options.caldavCalendarIds).map((id) => `showCalDAVCalendar_${id}`),
 	];
 }
 
@@ -123,6 +125,7 @@ export function buildCalendarConfigSnapshot(options: {
 	icsCalendarIds?: readonly unknown[];
 	googleCalendarIds?: readonly unknown[];
 	microsoftCalendarIds?: readonly unknown[];
+	caldavCalendarIds?: readonly unknown[];
 }): string {
 	if (!options.config || typeof options.config.get !== "function") {
 		return "";
@@ -132,6 +135,7 @@ export function buildCalendarConfigSnapshot(options: {
 		icsCalendarIds: options.icsCalendarIds,
 		googleCalendarIds: options.googleCalendarIds,
 		microsoftCalendarIds: options.microsoftCalendarIds,
+		caldavCalendarIds: options.caldavCalendarIds,
 	});
 
 	return JSON.stringify(keys.map((key) => readCalendarConfigValue(options.config, key)));

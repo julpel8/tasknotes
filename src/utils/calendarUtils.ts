@@ -37,13 +37,7 @@ export function isEventInRange(
 }
 
 export function getProviderFromSubscriptionId(subscriptionId: string): string {
-	if (subscriptionId.startsWith("google-")) {
-		return "google";
-	}
-	if (subscriptionId.startsWith("microsoft-")) {
-		return "microsoft";
-	}
-	return "unknown";
+	return /^([a-z]+)-/.exec(subscriptionId)?.[1] ?? "unknown";
 }
 
 export function collectCalendarEvents(

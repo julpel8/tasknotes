@@ -217,7 +217,8 @@ export const fr: TranslationTree = {
 					propertyBasedEvents: "Événements basés sur les propriétés",
 					calendarSubscriptions: "Abonnements au calendrier",
 					googleCalendars: "Agendas Google",
-					microsoftCalendars: "Calendriers Microsoft"
+					microsoftCalendars: "Calendriers Microsoft",
+					caldavCalendars: "Calendriers CalDAV"
 				},
 				dateNavigation: {
 					navigateToDate: "Naviguer vers la date",

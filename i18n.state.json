@@ -620,6 +620,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "2d78acd402e41ccea50d9ae466d7c5dbe3d0ce09"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "b3a01d7806d06830f7d4a4f6723ae639cc0915df"
@@ -9730,6 +9731,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "ec1cd95d9cd8c101fb7b49ee83eb6ac2613051c4"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "fa66602b85f1f973639677da41fcafd2912bfff0"
@@ -18839,6 +18841,10 @@
     "views.basesCalendar.settings.groups.microsoftCalendars": {
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "ee7114e6852e694f46938134d56836dbac94ea3b"
+    },
+    "views.basesCalendar.settings.groups.caldavCalendars": {
+      "source": "e58051ed4cbe547bf15017d8a383b87b99ed2e74",
+      "translation": "73e5594dae5674ce9722b31f5e6c15ce894e0c39"
     },
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
@@ -27950,6 +27956,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "d1fcbc3503e0e64af998bf82ca1aad3afbe4a1a6"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "54ceab04071c47bd8194d1bc48240748c089c7d2"
@@ -37060,6 +37067,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "4b3938d9d59058a86eec27998ef1187f836d01a7"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "241e55d7f6e6c54220bd0cf3b9d245c82eb2d5ff"
@@ -46170,6 +46178,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "d0def7be25f86c5ffac9600ebd776119dc16c0a9"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "8d55dbed2f70915979c1e29aa094fc7e26e987de"
@@ -55280,6 +55289,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "a44f01dc7e29b987641fd5b74256fc2e825e1808"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "a19547af0ba78583a6a456399f0ccd71cf31e442"
@@ -64390,6 +64400,7 @@
       "source": "c102b314396edb986acca472f50248fde261722e",
       "translation": "246ce5743f4159b6413490d4894d5c7b041d2f3a"
     },
+    "views.basesCalendar.settings.groups.caldavCalendars": null,
     "views.basesCalendar.settings.dateNavigation.navigateToDate": {
       "source": "2a47407705ef9a77de4778c38853a4122e38b1fd",
       "translation": "c0efa068855bb9fb623f36c52244cdd39eb55b04"

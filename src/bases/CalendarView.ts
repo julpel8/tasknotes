@@ -80,6 +80,7 @@ import {
 } from "./calendarConfigSnapshot";
 import { buildCalendarPropertyEvent } from "./calendarPropertyEvents";
 import { buildExternalCalendarEvents, setProviderCalendarToggle } from "./calendarExternalEvents";
+import { caldavSubscriptionId } from "../services/caldav/caldavIds";
 import {
 	decorateCalendarIcsEventElement,
 	getCalendarRelatedNoteTooltip,
@@ -524,6 +525,7 @@ export class CalendarView extends BasesViewBase {
 	private icsCalendarToggles = new Map<string, boolean>();
 	private googleCalendarToggles = new Map<string, boolean>();
 	private microsoftCalendarToggles = new Map<string, boolean>();
+	private caldavCalendarToggles = new Map<string, boolean>();
 	private configLoaded = false; // Track if we've successfully loaded config
 
 	constructor(controller: unknown, containerEl: HTMLElement, plugin: TaskNotesPlugin) {
@@ -704,6 +706,10 @@ export class CalendarView extends BasesViewBase {
 				this.plugin.microsoftCalendarService
 					?.getAvailableCalendars()
 					.map((calendar) => calendar.id) ?? [],
+			caldavCalendarIds:
+				this.plugin.caldavCalendarService
+					?.getAvailableCalendars()
+					.map((calendar) => caldavSubscriptionId(calendar.id)) ?? [],
 		});
 	}
 
@@ -934,6 +940,18 @@ export class CalendarView extends BasesViewBase {
 				for (const cal of calendars) {
 					const key = `showMicrosoftCalendar_${cal.id}`;
 					this.microsoftCalendarToggles.set(cal.id, this.getConfigOption(key, true));
+				}
+			}
+
+			// CalDAV calendar toggles, keyed like the events' subscription id
+			if (this.plugin.caldavCalendarService) {
+				const calendars = this.plugin.caldavCalendarService.getAvailableCalendars();
+				for (const cal of calendars) {
+					const id = caldavSubscriptionId(cal.id);
+					this.caldavCalendarToggles.set(
+						id,
+						this.getConfigOption(`showCalDAVCalendar_${id}`, true)
+					);
 				}
 			}
 		} catch (e) {
@@ -1507,6 +1525,10 @@ export class CalendarView extends BasesViewBase {
 				await this.plugin.microsoftCalendarService.refreshAllCalendars();
 			}
 
+			if (this.plugin.caldavCalendarService) {
+				await this.plugin.caldavCalendarService.refresh();
+			}
+
 			this.calendar?.refetchEvents();
 		} catch (error) {
 			tasknotesLogger.error("[TaskNotes][CalendarView] Error refreshing calendars:", {
@@ -1852,7 +1874,8 @@ export class CalendarView extends BasesViewBase {
 		const hasExternalCalendarEvents = Boolean(
 			this.plugin.icsSubscriptionService?.getAllEvents().length ||
 				this.plugin.googleCalendarService?.getAllEvents().length ||
-				this.plugin.microsoftCalendarService?.getAllEvents().length
+				this.plugin.microsoftCalendarService?.getAllEvents().length ||
+				this.plugin.caldavCalendarService?.getAllEvents().length
 		);
 		const relatedNoteCountsByEventId = hasExternalCalendarEvents
 			? await this.plugin.icsNoteService.getRelatedNoteCountsByEventId()
@@ -1892,6 +1915,19 @@ export class CalendarView extends BasesViewBase {
 					provider: "microsoft",
 					plugin: this.plugin,
 					toggles: this.microsoftCalendarToggles,
+					relatedNoteCountsByEventId,
+				})
+			);
+		}
+
+		// Add CalDAV events
+		if (this.plugin.caldavCalendarService) {
+			allEvents.push(
+				...buildExternalCalendarEvents({
+					events: this.plugin.caldavCalendarService.getAllEvents(),
+					provider: "caldav",
+					plugin: this.plugin,
+					toggles: this.caldavCalendarToggles,
 					relatedNoteCountsByEventId,
 				})
 			);

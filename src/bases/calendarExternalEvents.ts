@@ -4,7 +4,7 @@ import type { ICSEvent } from "../types";
 import { createICSEvent } from "./calendar-core";
 import { PRIMARY_CALENDAR_ALIAS, ProviderCalendar } from "../services/CalendarProvider";
 
-export type ExternalCalendarProvider = "ics" | "google" | "microsoft";
+export type ExternalCalendarProvider = "ics" | "google" | "microsoft" | "caldav";
 
 export type ExternalCalendarEventFactory = (
 	event: ICSEvent,

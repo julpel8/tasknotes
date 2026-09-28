@@ -17,6 +17,7 @@ import {
 	isRecurringCalendarObject,
 	objectUrlForUid,
 } from "./icalObjects";
+import { caldavSubscriptionId } from "./caldavIds";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Services/CalDAVCalendarService" });
 
@@ -45,15 +46,6 @@ export function getCalDAVCredentials(plugin: TaskNotesPlugin): CalDAVCredentials
 	// Without a password every request would be refused; treat CalDAV as not set up.
 	if (!password) return null;
 	return { serverUrl: settings.serverUrl, username: settings.username, password };
-}
-
-/** Stable, short subscription id for a calendar URL. */
-export function caldavSubscriptionId(calendarUrl: string): string {
-	let hash = 5381;
-	for (let i = 0; i < calendarUrl.length; i++) {
-		hash = ((hash << 5) + hash + calendarUrl.charCodeAt(i)) >>> 0;
-	}
-	return `caldav-${hash.toString(36)}`;
 }
 
 /**

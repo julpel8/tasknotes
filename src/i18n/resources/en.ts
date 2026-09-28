@@ -224,6 +224,7 @@ export const en: TranslationTree = {
 					calendarSubscriptions: "Calendar subscriptions",
 					googleCalendars: "Google calendars",
 					microsoftCalendars: "Microsoft calendars",
+					caldavCalendars: "CalDAV calendars",
 				},
 				dateNavigation: {
 					navigateToDate: "Navigate to date",

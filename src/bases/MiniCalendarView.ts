@@ -38,6 +38,7 @@ import { createTaskNotesLogger } from "../utils/tasknotesLogger";
 import { createElementInDocument } from "../utils/documentDom";
 import { findProviderCalendar } from "../services/CalendarProvider";
 import { setProviderCalendarToggle } from "./calendarExternalEvents";
+import { caldavSubscriptionId } from "../services/caldav/caldavIds";
 
 const tasknotesLogger = createTaskNotesLogger({ tag: "Bases/MiniCalendarView" });
 
@@ -116,6 +117,7 @@ export class MiniCalendarView extends BasesViewBase {
 	private icsCalendarToggles: Map<string, boolean> = new Map();
 	private googleCalendarToggles: Map<string, boolean> = new Map();
 	private microsoftCalendarToggles: Map<string, boolean> = new Map();
+	private caldavCalendarToggles: Map<string, boolean> = new Map();
 	private displayedMonth: number;
 	private displayedYear: number;
 	private selectedDate: Date; // UTC-anchored
@@ -193,6 +195,7 @@ export class MiniCalendarView extends BasesViewBase {
 		this.icsCalendarToggles.clear();
 		this.googleCalendarToggles.clear();
 		this.microsoftCalendarToggles.clear();
+		this.caldavCalendarToggles.clear();
 
 		if (!this.config || typeof this.config.get !== "function") {
 			return;
@@ -225,6 +228,13 @@ export class MiniCalendarView extends BasesViewBase {
 					calendar.id,
 					getToggleValue(`showMicrosoftCalendar_${calendar.id}`)
 				);
+			}
+		}
+
+		if (this.plugin.caldavCalendarService) {
+			for (const calendar of this.plugin.caldavCalendarService.getAvailableCalendars()) {
+				const id = caldavSubscriptionId(calendar.id);
+				this.caldavCalendarToggles.set(id, getToggleValue(`showCalDAVCalendar_${id}`));
 			}
 		}
 	}
@@ -418,6 +428,7 @@ export class MiniCalendarView extends BasesViewBase {
 		this.indexICSEvents();
 		this.indexGoogleCalendarEvents();
 		this.indexMicrosoftCalendarEvents();
+		this.indexCalDAVCalendarEvents();
 	}
 
 	private indexICSEvents(): void {
@@ -486,6 +497,25 @@ export class MiniCalendarView extends BasesViewBase {
 				calendar?.summary || "Microsoft Calendar",
 				icsEvent.color || "#0078D4"
 			);
+		}
+	}
+
+	private indexCalDAVCalendarEvents(): void {
+		if (!this.plugin.caldavCalendarService) {
+			return;
+		}
+
+		const calendars = new Map(
+			this.plugin.caldavCalendarService
+				.getAvailableCalendars()
+				.map((calendar) => [caldavSubscriptionId(calendar.id), calendar])
+		);
+
+		for (const icsEvent of this.plugin.caldavCalendarService.getAllEvents()) {
+			if (this.caldavCalendarToggles.get(icsEvent.subscriptionId) === false) continue;
+
+			const calendar = calendars.get(icsEvent.subscriptionId);
+			this.indexExternalEvent(icsEvent, calendar?.summary || "CalDAV", icsEvent.color);
 		}
 	}
 

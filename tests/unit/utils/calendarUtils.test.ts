@@ -78,9 +78,16 @@ describe('calendarUtils', () => {
 			expect(getProviderFromSubscriptionId('microsoft-outlook-xyz')).toBe('microsoft');
 		});
 
-		it('should return "unknown" for other IDs', () => {
-			expect(getProviderFromSubscriptionId('other-789')).toBe('unknown');
-			expect(getProviderFromSubscriptionId('ics-feed')).toBe('unknown');
+		it('should return "caldav" for caldav- prefixed IDs', () => {
+			expect(getProviderFromSubscriptionId('caldav-1x2y3z')).toBe('caldav');
+		});
+
+		it('should return the prefix of other dashed IDs', () => {
+			expect(getProviderFromSubscriptionId('other-789')).toBe('other');
+		});
+
+		it('should return "unknown" for IDs without a prefix', () => {
+			expect(getProviderFromSubscriptionId('ics_k3j9x')).toBe('unknown');
 			expect(getProviderFromSubscriptionId('')).toBe('unknown');
 		});
 	});

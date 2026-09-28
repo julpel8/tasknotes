@@ -154,6 +154,7 @@
   "views.basesCalendar.settings.groups.calendarSubscriptions": "9b99ca62a8c206aeef3199afeb8c2d6ea70c3c3a",
   "views.basesCalendar.settings.groups.googleCalendars": "9a2af6a1e5149c60c0879520f240ebe5a918a232",
   "views.basesCalendar.settings.groups.microsoftCalendars": "c102b314396edb986acca472f50248fde261722e",
+  "views.basesCalendar.settings.groups.caldavCalendars": "e58051ed4cbe547bf15017d8a383b87b99ed2e74",
   "views.basesCalendar.settings.dateNavigation.navigateToDate": "2a47407705ef9a77de4778c38853a4122e38b1fd",
   "views.basesCalendar.settings.dateNavigation.navigateToDatePlaceholder": "5c6abb7b0eec92301b6084e8f47b1963bee3a2d3",
   "views.basesCalendar.settings.dateNavigation.navigateToDateFromProperty": "1d41e70f496e85518af57ff9d0c3800425946fb2",
