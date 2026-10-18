@@ -1681,7 +1681,9 @@ export class CalendarView extends BasesViewBase {
 	}
 
 	private isPopoutWindow(): boolean {
-		return isCalendarInPopoutWindow(this.containerEl);
+		// Fork: the calendar is used in a popout window (sway "agenda" workspace),
+		// so the upstream popout block is turned off.
+		return false && isCalendarInPopoutWindow(this.containerEl);
 	}
 
 	private renderPopoutUnsupported(): void {
