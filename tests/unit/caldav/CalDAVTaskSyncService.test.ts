@@ -94,6 +94,11 @@ function createDevice(server: FakeServer, tasks: Map<string, TaskInfo>, frontmat
 				tasks.set(task.path, updated);
 				return updated;
 			}),
+			updateTask: jest.fn(async (task: TaskInfo, updates: Partial<TaskInfo>) => {
+				const updated = { ...task, ...updates, dateModified: new Date().toISOString() };
+				tasks.set(task.path, updated);
+				return updated;
+			}),
 			toggleRecurringTaskComplete: jest.fn(),
 			createTask: jest.fn(async (data: Partial<TaskInfo> & { customFrontmatter?: Record<string, unknown> }) => {
 				const path = `TaskNotes/Tasks/${data.title}.md`;
@@ -104,7 +109,12 @@ function createDevice(server: FakeServer, tasks: Map<string, TaskInfo>, frontmat
 			}),
 		},
 		app: {
-			vault: { getAbstractFileByPath: fileFor, getName: () => "notes" },
+			vault: {
+				getAbstractFileByPath: fileFor,
+				getName: () => "notes",
+				// The body lives in task.details here; real notes carry it below the frontmatter.
+				read: async (file: TFile) => `---\ntitle: x\n---\n\n${tasks.get(file.path)?.details ?? ""}\n`,
+			},
 			metadataCache: { getFileCache: (file: TFile) => ({ frontmatter: frontmatter.get(file.path) ?? {} }) },
 			fileManager: {
 				processFrontMatter: async (file: TFile, update: (fm: Record<string, unknown>) => void) => {
@@ -324,5 +334,50 @@ describe("CalDAVTaskSyncService", () => {
 		await service.runPass(true);
 
 		expect(server.objects.get(url)!.data).toContain("BEGIN:VALARM");
+	});
+
+	it("sends the note's text as the to-do's notes", async () => {
+		const { service, server, tasks, fm } = setup();
+		tasks.set("pain.md", task("pain.md", { details: "Aux céréales\nDeux baguettes" }));
+		await service.runPass(true);
+		const url = `${TASKS_URL}${fm.get("pain.md")!.caldav_uid as string}.ics`;
+
+		expect(readTodo(server.objects.get(url)!.data)!.description).toBe("Aux céréales\nDeux baguettes");
+
+		tasks.set("pain.md", task("pain.md", { details: "Trois baguettes", dateModified: "2099-01-01T00:00:00.000Z" }));
+		await service.runPass(true);
+
+		expect(readTodo(server.objects.get(url)!.data)!.description).toBe("Trois baguettes");
+	});
+
+	it("brings text written on the phone into the note", async () => {
+		const { service, server, tasks, fm, plugin } = setup();
+		tasks.set("pain.md", task("pain.md", { details: "Aux céréales" }));
+		await service.runPass(true);
+		const url = `${TASKS_URL}${fm.get("pain.md")!.caldav_uid as string}.ics`;
+
+		server.editFromPhone(
+			url,
+			(ics) => ics.replace(/DESCRIPTION:[^\r\n]*/u, "DESCRIPTION:Aux céréales\\nEt un croissant"),
+			"20990101T000000Z"
+		);
+		await service.runPass(true);
+
+		expect(plugin.taskService.updateTask).toHaveBeenCalledWith(expect.anything(), {
+			details: "Aux céréales\nEt un croissant",
+		});
+		expect(tasks.get("pain.md")!.details).toBe("Aux céréales\nEt un croissant");
+	});
+
+	it("leaves the server alone when the note's text did not change", async () => {
+		const { service, server, tasks } = setup();
+		tasks.set("pain.md", task("pain.md", { details: "Aux céréales\n" }));
+		await service.runPass(true);
+		server.putObject.mockClear();
+
+		tasks.set("pain.md", task("pain.md", { details: "Aux céréales", dateModified: "2099-01-01T00:00:00.000Z" }));
+		await service.runPass(true);
+
+		expect(server.putObject).not.toHaveBeenCalled();
 	});
 });

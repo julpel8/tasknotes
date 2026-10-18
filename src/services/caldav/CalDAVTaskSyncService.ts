@@ -2,6 +2,7 @@ import { TFile, type EventRef } from "obsidian";
 import type TaskNotesPlugin from "../../main";
 import { EVENT_TASK_UPDATED, type TaskInfo } from "../../types";
 import { getDatePart, parseDateToUTC } from "../../utils/dateUtils";
+import { splitFrontmatterAndBody } from "../../utils/helpers";
 import { createTaskNotesLogger } from "../../utils/tasknotesLogger";
 import { processVaultFrontMatter } from "../../core/VaultMutationService";
 import { CalDAVError, type CalDAVObject } from "./CalDAVClient";
@@ -9,6 +10,7 @@ import type { CalDAVCalendarService } from "./CalDAVCalendarService";
 import { generateUid, objectUrlForUid } from "./icalObjects";
 import {
 	CALDAV_UID_FIELD,
+	normalizeDescription,
 	pickTaskDate,
 	priorityToIcal,
 	readTodo,
@@ -28,7 +30,7 @@ const PENDING_DELETIONS_KEY = "tasknotes-caldav-pending-deletions";
 
 /**
  * Sends tasks to a CalDAV task calendar as to-dos (shown by phone reminder
- * apps) and brings completion and date changes back into the notes.
+ * apps) and brings completion, date and text changes back into the notes.
  *
  * No sync state lives in plugin data: the to-do's UID is stored in the note
  * (caldav_uid) and the object is named after it, so every device writes to the
@@ -188,7 +190,12 @@ export class CalDAVTaskSyncService {
 		return typeof value === "string" && value.trim() ? value.trim() : undefined;
 	}
 
-	private taskToFields(task: TaskInfo): TodoFields {
+	/** The note's body, which travels as the to-do's description. */
+	private async readNoteBody(file: TFile): Promise<string> {
+		return normalizeDescription(splitFrontmatterAndBody(await this.plugin.app.vault.read(file)).body);
+	}
+
+	private taskToFields(task: TaskInfo, description: string): TodoFields {
 		const { date, dateField } = pickTaskDate(task);
 		const vault = encodeURIComponent(this.plugin.app.vault.getName());
 		return {
@@ -197,6 +204,7 @@ export class CalDAVTaskSyncService {
 			date,
 			dateField,
 			priority: priorityToIcal(task.priority, this.plugin.settings.customPriorities),
+			description,
 			url: `obsidian://open?vault=${vault}&file=${encodeURIComponent(task.path)}`,
 		};
 	}
@@ -237,7 +245,7 @@ export class CalDAVTaskSyncService {
 		}
 
 		const url = objectUrlForUid(calendarUrl, uid);
-		let local = this.taskToFields(task);
+		let local = this.taskToFields(task, await this.readNoteBody(file));
 		const object = await loadObject(url);
 
 		if (!object) {
@@ -259,7 +267,7 @@ export class CalDAVTaskSyncService {
 			const updated = await this.applyServerChanges(task, local, server);
 			// A to-do not yet marked as ours still gets rewritten once, with the marker.
 			if (server.managed) return;
-			local = this.taskToFields(updated);
+			local = this.taskToFields(updated, await this.readNoteBody(file));
 		}
 
 		if (!server.managed || todoDiffers(local, server)) {
@@ -308,8 +316,9 @@ export class CalDAVTaskSyncService {
 	}
 
 	/**
-	 * Brings completion and date changes made on the server (e.g. in a phone's
-	 * reminders app) into the note. Other fields stay under the note's control.
+	 * Brings completion, date and text changes made on the server (e.g. in a
+	 * phone's reminders app) into the note. Other fields stay under the note's
+	 * control.
 	 */
 	private async applyServerChanges(
 		task: TaskInfo,
@@ -318,6 +327,10 @@ export class CalDAVTaskSyncService {
 	): Promise<TaskInfo> {
 		const taskService = this.plugin.taskService;
 		let current = task;
+
+		if ((server.description ?? "") !== (local.description ?? "")) {
+			current = await taskService.updateTask(current, { details: server.description ?? "" });
+		}
 
 		if (server.completed !== local.completed) {
 			if (current.recurrence) {

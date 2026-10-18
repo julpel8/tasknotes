@@ -22,6 +22,8 @@ export interface TodoFields {
 	dateField: TaskDateField;
 	/** iCalendar priority: 1 (highest) to 9 (lowest); undefined for none */
 	priority?: number;
+	/** Note body as plain text (see normalizeDescription); "" for none */
+	description?: string;
 	/** Link back to the note; written but never compared */
 	url?: string;
 }
@@ -30,7 +32,6 @@ export interface TodoSnapshot extends TodoFields {
 	uid: string;
 	/** True when a task note wrote this to-do */
 	managed: boolean;
-	description?: string;
 	/** Epoch milliseconds of LAST-MODIFIED (or DTSTAMP) */
 	lastModified?: number;
 }
@@ -47,6 +48,14 @@ export function normalizeTaskDate(value: string | undefined): string | undefined
 	const parsed = hasOffset ? new Date(trimmed) : new Date(trimmed.slice(0, 16));
 	if (isNaN(parsed.getTime())) return trimmed;
 	return format(parsed, "yyyy-MM-dd'T'HH:mm");
+}
+
+/**
+ * Normalizes a note body or to-do description so both sides compare equal:
+ * phones may send CRLF line ends, and notes end with a newline.
+ */
+export function normalizeDescription(value: string | undefined): string {
+	return (value ?? "").replace(/\r\n/g, "\n").trim();
 }
 
 /** Picks the date a to-do shows: due when set, otherwise scheduled. */
@@ -115,7 +124,7 @@ export function readTodo(icsText: string): TodoSnapshot | null {
 	return {
 		uid: textValue(vtodo, "uid"),
 		managed: vtodo.hasProperty(MANAGED_PROPERTY),
-		description: textValue(vtodo, "description") || undefined,
+		description: normalizeDescription(textValue(vtodo, "description")) || undefined,
 		title: textValue(vtodo, "summary"),
 		completed,
 		date,
@@ -134,13 +143,14 @@ export function todoDiffers(local: TodoFields, server: TodoFields): boolean {
 		local.completed !== server.completed ||
 		(local.date ?? "") !== (server.date ?? "") ||
 		(local.date ? local.dateField !== server.dateField : false) ||
-		(local.priority ?? 0) !== (server.priority ?? 0)
+		(local.priority ?? 0) !== (server.priority ?? 0) ||
+		(local.description ?? "") !== (server.description ?? "")
 	);
 }
 
 /**
  * Writes task fields into a to-do. With an existing object, other properties
- * (alarms set on a phone, notes, categories…) are kept.
+ * (alarms set on a phone, categories…) are kept.
  */
 export function writeTodo(existingIcs: string | null, uid: string, fields: TodoFields): string {
 	let calendar: ICAL.Component;
@@ -186,6 +196,7 @@ export function writeTodo(existingIcs: string | null, uid: string, fields: TodoF
 		vtodo.removeAllProperties("priority");
 	}
 
+	setOptionalText(vtodo, "description", fields.description);
 	setOptionalText(vtodo, "url", fields.url);
 	vtodo.updatePropertyWithValue(MANAGED_PROPERTY, "1");
 	vtodo.updatePropertyWithValue("dtstamp", nowUtc());
